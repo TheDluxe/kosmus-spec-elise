@@ -1,314 +1,270 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elise Hartwell — Wealth Strategy for High-Earning Women</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cormorant+SC:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
-</head>
-<body>
+/* ELISE HARTWELL — Warm Luxury Editorial (Improved Readability) */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav__logo">Elise Hartwell</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
-    <ul class="nav__links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#offer">The Offer</a></li>
-      <li><a href="#testimonials">Stories</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact" class="nav__cta">Work With Me</a></li>
-    </ul>
-  </nav>
+:root {
+  --navy:    #0f1a2e;
+  --navy-2:  #1a2d4a;
+  --ivory:   #f5f0e8;
+  --ivory-2: #ede6d6;
+  --gold:    #b8965a;
+  --gold-l:  #d4b07a;
+  --muted:   #5a5a5a;      /* darker than before (#7a7a7a) */
+  --rule:    #ddd5c4;
+  --white:   #faf8f4;
 
-  <!-- HERO — split with visual panel -->
-  <section class="hero" id="hero">
-    <div class="hero__left">
-      <div class="hero__content">
-        <p class="hero__eyebrow reveal">Wealth Strategy · Private Coaching · London</p>
-        <h1 class="hero__heading reveal">
-          You've earned<br />well. Now build<br /><em>wealth that lasts.</em>
-        </h1>
-        <p class="hero__sub reveal">
-          A private coaching experience for high-earning women ready to stop trading time for income and start building something that compounds.
-        </p>
-        <div class="hero__ctas reveal">
-          <a href="#contact" class="btn btn--navy">Begin the Conversation</a>
-          <a href="#offer" class="btn btn--ghost">The Offer</a>
-        </div>
-        <div class="hero__social-proof reveal">
-          <div class="hero__sp-item">
-            <span class="hero__sp-num">£40M+</span>
-            <span class="hero__sp-label">Client wealth restructured</span>
-          </div>
-          <div class="hero__sp-div"></div>
-          <div class="hero__sp-item">
-            <span class="hero__sp-num">200+</span>
-            <span class="hero__sp-label">Women coached</span>
-          </div>
-          <div class="hero__sp-div"></div>
-          <div class="hero__sp-item">
-            <span class="hero__sp-num">8 yrs</span>
-            <span class="hero__sp-label">Private wealth background</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero__right reveal">
-      <!-- Decorative visual panel — replace with portrait -->
-      <div class="hero__visual">
-        <div class="hero__visual-bg"></div>
-        <div class="hero__visual-card">
-          <p class="hero__visual-card-label">Current Cohort</p>
-          <p class="hero__visual-card-heading">The Sovereignty<br />Method</p>
-          <div class="hero__visual-card-stat">
-            <span>6 places</span>
-            <span class="hero__visual-card-dot">·</span>
-            <span>6 months</span>
-            <span class="hero__visual-card-dot">·</span>
-            <span>£6,000</span>
-          </div>
-          <div class="hero__visual-card-bar">
-            <div class="hero__visual-card-fill" style="width: 66%"></div>
-          </div>
-          <p class="hero__visual-card-sub">4 of 6 places filled</p>
-        </div>
-        <div class="hero__visual-quote">
-          <p>"The most important financial decision you make is the one to take it seriously."</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --mark:    'Cormorant SC', Georgia, serif;
+  --body:    'Outfit', sans-serif;
+  --max-w:   1200px;
+  --trans:   0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-  <!-- DIVIDER STRIP -->
-  <div class="divider-strip">
-    <div class="divider-strip__inner">
-      <span class="reveal">Financial Strategy</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Wealth Architecture</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Mindset Rewiring</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Legacy Planning</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Investment Foundations</span>
-    </div>
-  </div>
+body { background: var(--ivory); color: #1a1a1a; font-family: var(--body); }
+.container { width: 90%; max-width: var(--max-w); margin: 0 auto; }
+.section { padding: 120px 0; }
 
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="container about__grid">
-      <div class="about__image-col reveal">
-        <div class="about__portrait-wrap">
-          <div class="about__portrait"></div>
-        </div>
-        <div class="about__badge">
-          <p class="about__badge-num">94%</p>
-          <p class="about__badge-label">Client retention rate</p>
-        </div>
-      </div>
-      <div class="about__text-col">
-        <p class="label reveal">About Elise</p>
-        <h2 class="section__heading reveal">Strategy built on<br />truth, <em>not performance.</em></h2>
-        <p class="body-text reveal">After a decade in private wealth management at two of London's oldest firms, I left with one realisation: the women earning the most were often building the least.</p>
-        <p class="body-text reveal" style="margin-top: 1.2rem;">Not from lack of intelligence. Not from lack of ambition. From never being given a framework that put their financial future first — rather than the interests of an institution.</p>
-        <p class="body-text reveal" style="margin-top: 1.2rem;">I built Hartwell Coaching to change that. My work is part financial strategy, part mindset architecture — because knowing what to do and actually doing it are two entirely different problems.</p>
-        <a href="#contact" class="btn btn--outline reveal" style="margin-top: 2.5rem;">Work With Elise</a>
-      </div>
-    </div>
-  </section>
+.label { 
+  font-family: var(--mark); 
+  font-size: 0.8rem;        /* increased from 0.65rem */
+  letter-spacing: 0.2em; 
+  color: var(--gold); 
+  display: block; 
+  margin-bottom: 1.2rem; 
+}
+.section__heading { 
+  font-family: var(--display); 
+  font-size: clamp(2.5rem, 5vw, 4rem); /* slightly larger */
+  font-weight: 400;          /* bolder */
+  line-height: 1.12; 
+  color: var(--navy); 
+  margin-bottom: 1.6rem; 
+}
+.section__heading em { 
+  font-style: italic; 
+  color: var(--gold); 
+}
+.body-text { 
+  font-size: 1.05rem;        /* increased from 0.95rem */
+  line-height: 1.85; 
+  color: #2c2c2c;            /* darker, not grey */
+  font-weight: 350; 
+  max-width: 520px; 
+}
 
-  <!-- OFFER -->
-  <section class="offer section" id="offer">
-    <div class="container">
-      <div class="offer__header">
-        <p class="label reveal">The Programme</p>
-        <h2 class="section__heading reveal">The Sovereignty Method.<br /><em>Six months, privately.</em></h2>
-        <p class="offer__sub reveal">This is not a course. Not group coaching. One sustained private engagement designed to restructure how you relate to money at every level.</p>
-      </div>
-      <div class="offer__modules">
-        <div class="offer__module reveal">
-          <span class="offer__module-num">01</span>
-          <div>
-            <h3>Financial Clarity Audit</h3>
-            <p>A complete, honest picture of where you stand — income, assets, liabilities, and the blind spots you've been avoiding. We start with truth.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">02</span>
-          <div>
-            <h3>Wealth Architecture</h3>
-            <p>A bespoke 5-year wealth plan built around your life, your values, and your timeline. Not a generic spreadsheet. A real strategy.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">03</span>
-          <div>
-            <h3>Mindset Rewiring</h3>
-            <p>Identifying and dismantling the earning and spending patterns keeping your wealth ceiling exactly where it is. The work most coaches avoid.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">04</span>
-          <div>
-            <h3>Investment Foundations</h3>
-            <p>Practical guidance on building your investment portfolio — ISAs, pensions, property, and beyond. Demystified, entirely.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">05</span>
-          <div>
-            <h3>Private Accountability</h3>
-            <p>Bi-weekly 1:1 sessions, unlimited voice note access, and real-time support through every financial decision that arises.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">06</span>
-          <div>
-            <h3>Legacy Planning</h3>
-            <p>Structuring your wealth to outlast you. Wills, trusts, generational transfer — the conversation that turns income into inheritance.</p>
-          </div>
-        </div>
-      </div>
-      <div class="offer__investment reveal">
-        <p class="offer__investment-label">Investment</p>
-        <p class="offer__investment-price">£6,000</p>
-        <p class="offer__investment-note">Full programme · Six months · Strictly limited to 6 clients per cohort</p>
-        <a href="#contact" class="btn btn--navy">Apply for a Place</a>
-      </div>
-    </div>
-  </section>
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials section" id="testimonials">
-    <div class="container">
-      <p class="label reveal">Client Stories</p>
-      <h2 class="section__heading reveal">Words from women<br /><em>who did the work.</em></h2>
-      <div class="testimonials__grid">
-        <div class="testimonial reveal">
-          <p class="testimonial__text">"I was earning £180k and genuinely didn't know where it was going. Six months in, I have a pension I'm actually contributing to, a property investment in motion, and — for the first time — I feel like I'm in charge of my future."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__av testimonial__av--1"></div>
-            <div>
-              <p class="testimonial__name">Sarah M.</p>
-              <p class="testimonial__role">Senior Director · London</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial reveal">
-          <p class="testimonial__text">"Elise doesn't just give you a plan — she changes the way you think. I came in believing I was bad with money. I left knowing that was a story I'd inherited, not a fact."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__av testimonial__av--2"></div>
-            <div>
-              <p class="testimonial__name">Dr. Amara T.</p>
-              <p class="testimonial__role">Consultant Physician · Manchester</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial reveal">
-          <p class="testimonial__text">"My net worth has grown more in one year post-coaching than in the previous five combined. Elise holds you to a standard you didn't know you could reach."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__av testimonial__av--3"></div>
-            <div>
-              <p class="testimonial__name">Priya R.</p>
-              <p class="testimonial__role">Founder & CEO · Edinburgh</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+/* BUTTONS */
+.btn { 
+  font-family: var(--mark); 
+  font-size: 0.75rem;        /* increased */
+  letter-spacing: 0.16em; 
+  padding: 1rem 2.2rem; 
+  border: 1px solid transparent; 
+  display: inline-block; 
+  transition: all var(--trans); 
+}
+.btn--navy { background: var(--navy); color: var(--ivory); border-color: var(--navy); }
+.btn--navy:hover { background: var(--navy-2); border-color: var(--gold); color: var(--gold-l); }
+.btn--ghost { background: transparent; color: rgba(245,240,232,0.9); border-color: rgba(245,240,232,0.4); }
+.btn--ghost:hover { border-color: var(--gold-l); color: var(--gold-l); }
+.btn--outline { background: transparent; color: var(--navy); border-color: rgba(15,26,46,0.3); }
+.btn--outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn--full { width: 100%; text-align: center; }
 
-  <!-- FAQ -->
-  <section class="faq section" id="faq">
-    <div class="container faq__grid">
-      <div class="faq__left">
-        <p class="label reveal">FAQ</p>
-        <h2 class="section__heading reveal">Questions worth<br /><em>asking first.</em></h2>
-      </div>
-      <div class="faq__right">
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">Who is this for? <span>+</span></button>
-          <div class="faq__a"><p>Women earning £80,000 or more who feel financially successful on paper but haven't yet translated that income into lasting wealth. Motivated, capable, ready for the right framework.</p></div>
-        </div>
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">Do I need existing investments? <span>+</span></button>
-          <div class="faq__a"><p>Not at all. Many clients begin with minimal investment experience. What matters is your income level and your commitment to the process.</p></div>
-        </div>
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">What does the six months look like? <span>+</span></button>
-          <div class="faq__a"><p>Bi-weekly 75-minute strategy sessions. Unlimited voice note access between sessions. All materials and your bespoke wealth plan in a private client portal.</p></div>
-        </div>
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">Is the investment paid upfront? <span>+</span></button>
-          <div class="faq__a"><p>The £6,000 can be paid in full or split across two instalments of £3,200. Payment plans beyond two instalments are not available — full commitment produces full results.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.8rem 5%; transition: background var(--trans), padding var(--trans); }
+.nav.scrolled { background: rgba(15,26,46,0.97); padding: 1rem 5%; backdrop-filter: blur(10px); }
+.nav__logo { font-family: var(--display); font-size: 1.4rem; font-weight: 400; letter-spacing: 0.04em; color: var(--ivory); }
+.nav__links { display: flex; align-items: center; gap: 2.5rem; }
+.nav__links a { font-family: var(--mark); font-size: 0.7rem; letter-spacing: 0.14em; color: rgba(245,240,232,0.8); transition: color var(--trans); }
+.nav__links a:hover { color: var(--gold-l); }
+.nav__cta { border: 1px solid rgba(184,150,90,0.6) !important; padding: 0.5rem 1.3rem; color: var(--gold) !important; }
+.nav__cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+.nav__toggle { display: none; flex-direction: column; gap: 6px; padding: 4px; }
+.nav__toggle span { display: block; width: 22px; height: 1px; background: var(--ivory); transition: all var(--trans); }
 
-  <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="container contact__inner">
-      <div class="contact__left">
-        <p class="label reveal">Apply</p>
-        <h2 class="section__heading reveal">Six places.<br /><em>One conversation.</em></h2>
-        <p class="body-text reveal">Tell me where you are, what you're building toward, and what's standing in the way. I respond personally within 48 hours.</p>
-        <p class="contact__caveat reveal">"There is no waitlist. Applications close when the six places are filled."</p>
-      </div>
-      <div class="contact__form-wrap reveal">
-        <form id="contactForm" novalidate>
-          <div class="form__group">
-            <label>Full Name</label>
-            <input type="text" placeholder="Your name" required />
-          </div>
-          <div class="form__group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form__group">
-            <label>Annual Income (approximate)</label>
-            <select required>
-              <option value="" disabled selected>Select a range</option>
-              <option>£80,000 – £120,000</option>
-              <option>£120,000 – £200,000</option>
-              <option>£200,000+</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label>What brings you here?</label>
-            <textarea rows="4" placeholder="Tell Elise what you're working toward and what's standing in the way..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn--navy btn--full">Send My Application</button>
-          <p class="form__note">Held in complete confidence. Never shared.</p>
-        </form>
-        <div class="form__success" id="formSuccess">
-          <div class="form__success-icon">✓</div>
-          <h3>Application received.</h3>
-          <p>Elise will be in touch within 48 hours.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+/* HERO — SPLIT */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); overflow: hidden; }
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__logo">Elise Hartwell</p>
-      <p class="footer__tagline">Financial Strategy · Wealth Mindset · Private Coaching</p>
-      <nav class="footer__nav">
-        <a href="#about">About</a>
-        <a href="#offer">The Offer</a>
-        <a href="#testimonials">Stories</a>
-        <a href="#contact">Apply</a>
-      </nav>
-      <p class="footer__legal">© 2025 Elise Hartwell Coaching Ltd · Privacy Policy</p>
-    </div>
-  </footer>
+.hero__left {
+  display: flex; align-items: center;
+  padding: 0 6% 0 5%;
+  position: relative;
+}
+.hero__left::after {
+  content: '';
+  position: absolute; right: 0; top: 15%; bottom: 15%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(184,150,90,0.3), transparent);
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.hero__left::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 70px, rgba(184,150,90,0.05) 70px, rgba(184,150,90,0.05) 71px),
+    repeating-linear-gradient(90deg, transparent, transparent 70px, rgba(184,150,90,0.05) 70px, rgba(184,150,90,0.05) 71px);
+  pointer-events: none;
+}
+
+.hero__content { position: relative; z-index: 1; padding: 8rem 0 6rem; }
+
+.hero__eyebrow { font-family: var(--mark); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); display: block; margin-bottom: 2rem; }
+
+.hero__heading { font-family: var(--display); font-size: clamp(3rem, 5vw, 5rem); font-weight: 400; line-height: 1.08; color: var(--ivory); margin-bottom: 2rem; }
+.hero__heading em { font-style: italic; color: var(--gold-l); }
+
+.hero__sub { font-size: 1.1rem; line-height: 1.8; color: rgba(245,240,232,0.85); font-weight: 350; max-width: 440px; margin-bottom: 2.8rem; }
+
+.hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+
+.hero__social-proof { display: flex; align-items: center; gap: 2rem; padding-top: 2.5rem; border-top: 1px solid rgba(184,150,90,0.25); }
+.hero__sp-item { display: flex; flex-direction: column; gap: 0.3rem; }
+.hero__sp-num { font-family: var(--display); font-size: 1.8rem; font-weight: 400; color: var(--gold-l); line-height: 1; }
+.hero__sp-label { font-size: 0.75rem; color: rgba(245,240,232,0.7); font-weight: 400; }
+.hero__sp-div { width: 1px; height: 36px; background: rgba(184,150,90,0.3); }
+
+/* HERO RIGHT (unchanged visual panel) */
+.hero__right { position: relative; display: flex; align-items: center; justify-content: center; padding: 8rem 5% 6rem 6%; }
+.hero__visual { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 1.5rem; }
+.hero__visual-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 60% 50%, rgba(184,150,90,0.1) 0%, transparent 60%); pointer-events: none; }
+.hero__visual-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(184,150,90,0.3); padding: 2.5rem; position: relative; z-index: 1; }
+.hero__visual-card-label { font-family: var(--mark); font-size: 0.65rem; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 1rem; }
+.hero__visual-card-heading { font-family: var(--display); font-size: 2rem; font-weight: 400; color: var(--ivory); line-height: 1.15; margin-bottom: 1.5rem; }
+.hero__visual-card-stat { display: flex; align-items: center; gap: 0.8rem; font-family: var(--mark); font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(245,240,232,0.6); margin-bottom: 1.5rem; }
+.hero__visual-card-dot { color: var(--gold); }
+.hero__visual-card-bar { width: 100%; height: 2px; background: rgba(255,255,255,0.1); position: relative; margin-bottom: 0.6rem; }
+.hero__visual-card-fill { height: 100%; background: var(--gold); }
+.hero__visual-card-sub { font-size: 0.7rem; color: rgba(245,240,232,0.5); }
+.hero__visual-quote { border-left: 2px solid var(--gold); padding-left: 1.5rem; position: relative; z-index: 1; }
+.hero__visual-quote p { font-family: var(--display); font-size: 1.1rem; font-style: italic; color: rgba(245,240,232,0.6); line-height: 1.6; font-weight: 300; }
+
+/* DIVIDER STRIP */
+.divider-strip { background: var(--navy-2); border-top: 1px solid rgba(184,150,90,0.15); border-bottom: 1px solid rgba(184,150,90,0.15); padding: 1.5rem 0; overflow: hidden; }
+.divider-strip__inner { width: 90%; max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.divider-strip__inner span { font-family: var(--mark); font-size: 0.7rem; letter-spacing: 0.16em; color: rgba(245,240,232,0.6); }
+.divider-strip__dot { color: var(--gold) !important; font-size: 0.6rem !important; }
+
+/* ABOUT */
+.about { background: var(--ivory); }
+.about__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 7rem; align-items: center; }
+.about__image-col { position: relative; }
+.about__portrait-wrap { width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+.about__portrait { width: 100%; height: 100%; background: linear-gradient(160deg, var(--navy-2) 0%, var(--navy) 100%); position: relative; }
+.about__portrait::before { content: 'Photo'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 0.8rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.2); }
+.about__badge { position: absolute; bottom: -2rem; right: -2rem; background: var(--gold); padding: 1.8rem 2rem; text-align: center; }
+.about__badge-num { font-family: var(--display); font-size: 2.5rem; font-weight: 500; color: var(--navy); line-height: 1; }
+.about__badge-label { font-size: 0.7rem; color: var(--navy); margin-top: 0.3rem; opacity: 0.8; font-weight: 500; }
+.about__text-col .body-text + .body-text { margin-top: 1.2rem; }
+
+/* OFFER */
+.offer { background: var(--navy); }
+.offer .label { color: var(--gold); }
+.offer .section__heading { color: var(--ivory); }
+.offer .section__heading em { color: var(--gold-l); }
+.offer__header { text-align: center; margin-bottom: 5rem; }
+.offer__header .section__heading { margin: 0 auto 1.2rem; }
+.offer__sub { font-size: 1rem; line-height: 1.75; color: rgba(245,240,232,0.8); max-width: 560px; margin: 0 auto; font-weight: 350; }
+.offer__modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); }
+.offer__module { background: var(--navy); padding: 2.8rem 2.4rem; display: flex; gap: 1.5rem; border: 1px solid rgba(184,150,90,0.12); transition: background var(--trans), border-color var(--trans); }
+.offer__module:hover { background: var(--navy-2); border-color: rgba(184,150,90,0.3); }
+.offer__module-num { font-family: var(--display); font-size: 2.8rem; font-weight: 400; color: rgba(184,150,90,0.3); line-height: 1; flex-shrink: 0; }
+.offer__module h3 { font-family: var(--display); font-size: 1.4rem; font-weight: 500; color: var(--ivory); margin-bottom: 0.7rem; }
+.offer__module p { font-size: 0.95rem; line-height: 1.75; color: rgba(245,240,232,0.7); font-weight: 350; }
+.offer__investment { text-align: center; margin-top: 5rem; border: 1px solid rgba(184,150,90,0.3); padding: 4rem; display: inline-block; width: 100%; max-width: 500px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+.offer__investment-label { font-family: var(--mark); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); }
+.offer__investment-price { font-family: var(--display); font-size: 5rem; font-weight: 400; color: var(--ivory); line-height: 1; }
+.offer__investment-note { font-size: 0.85rem; color: rgba(245,240,232,0.5); margin-bottom: 1rem; }
+
+/* TESTIMONIALS */
+.testimonials { background: var(--ivory-2); }
+.testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+.testimonial { background: var(--ivory); padding: 2.8rem; border-bottom: 3px solid var(--gold); }
+.testimonial__text { font-family: var(--display); font-size: 1.1rem; font-style: italic; line-height: 1.75; color: #1e1e1e; font-weight: 400; margin-bottom: 2rem; }
+.testimonial__author { display: flex; align-items: center; gap: 1rem; }
+.testimonial__av { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; }
+.testimonial__av--1 { background: linear-gradient(135deg, var(--navy-2), var(--navy)); }
+.testimonial__av--2 { background: linear-gradient(135deg, var(--navy), var(--navy-2)); }
+.testimonial__av--3 { background: linear-gradient(135deg, #1a2540, var(--navy-2)); }
+.testimonial__name { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+.testimonial__role { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* FAQ */
+.faq { background: var(--ivory); }
+.faq__grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 7rem; align-items: start; }
+.faq__left { position: sticky; top: 100px; }
+.faq__item { border-bottom: 1px solid var(--rule); }
+.faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; font-size: 1rem; font-weight: 500; color: var(--navy); text-align: left; gap: 1rem; transition: color var(--trans); }
+.faq__q:hover { color: var(--gold); }
+.faq__q span { color: var(--gold); font-size: 1.4rem; font-weight: 300; transition: transform var(--trans); flex-shrink: 0; }
+.faq__q[aria-expanded="true"] span { transform: rotate(45deg); }
+.faq__a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq__a.open { max-height: 200px; padding-bottom: 1.2rem; }
+.faq__a p { font-size: 0.95rem; line-height: 1.8; color: #3a3a3a; font-weight: 350; }
+
+/* CONTACT */
+.contact { background: var(--navy); }
+.contact .label { color: var(--gold); }
+.contact .section__heading { color: var(--ivory); }
+.contact .section__heading em { color: var(--gold-l); }
+.contact .body-text { color: rgba(245,240,232,0.8); }
+.contact__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+.contact__caveat { margin-top: 2rem; font-family: var(--display); font-size: 1rem; font-style: italic; color: rgba(245,240,232,0.5); border-left: 2px solid var(--gold); padding-left: 1.2rem; line-height: 1.6; }
+
+form { display: flex; flex-direction: column; gap: 1.5rem; }
+.form__group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form__group label { font-family: var(--mark); font-size: 0.65rem; letter-spacing: 0.14em; color: rgba(245,240,232,0.7); }
+.form__group input, .form__group select, .form__group textarea { background: rgba(255,255,255,0.06); border: none; border-bottom: 1px solid rgba(255,255,255,0.15); color: var(--ivory); font-family: var(--body); font-size: 0.95rem; font-weight: 350; padding: 0.75rem 0; outline: none; transition: border-color var(--trans); border-radius: 0; -webkit-appearance: none; width: 100%; }
+.form__group input::placeholder, .form__group textarea::placeholder { color: rgba(245,240,232,0.3); }
+.form__group input:focus, .form__group select:focus, .form__group textarea:focus { border-bottom-color: var(--gold); }
+.form__group textarea { resize: vertical; }
+.form__group select option { background: var(--navy); }
+.form__note { font-size: 0.7rem; color: rgba(245,240,232,0.4); text-align: center; }
+
+.form__success { display: none; padding: 3rem 0; }
+.form__success.visible { display: block; }
+.form__success-icon { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--gold); margin-bottom: 1.5rem; }
+.form__success h3 { font-family: var(--display); font-size: 2.2rem; font-weight: 400; color: var(--ivory); margin-bottom: 0.5rem; }
+.form__success p { font-size: 0.9rem; color: rgba(245,240,232,0.6); }
+
+/* FOOTER */
+.footer { background: #060f1c; padding: 4.5rem 0 2.5rem; }
+.footer__inner { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; text-align: center; }
+.footer__logo { font-family: var(--display); font-size: 1.8rem; font-weight: 400; color: var(--ivory); letter-spacing: 0.03em; }
+.footer__tagline { font-family: var(--mark); font-size: 0.65rem; letter-spacing: 0.16em; color: var(--gold); }
+.footer__nav { display: flex; gap: 2rem; }
+.footer__nav a { font-family: var(--mark); font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(245,240,232,0.4); transition: color var(--trans); }
+.footer__nav a:hover { color: var(--gold-l); }
+.footer__legal { font-size: 0.65rem; color: rgba(245,240,232,0.2); margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.04); width: 100%; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__right { display: none; }
+  .hero__left { padding: 0 5%; }
+  .about__grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .about__badge { bottom: -1rem; right: -0.5rem; }
+  .offer__modules { grid-template-columns: repeat(2, 1fr); }
+  .testimonials__grid { grid-template-columns: 1fr 1fr; }
+  .testimonials__grid .testimonial:last-child { display: none; }
+  .faq__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .faq__left { position: static; }
+  .contact__inner { grid-template-columns: 1fr; gap: 3.5rem; }
+}
+@media (max-width: 768px) {
+  .section { padding: 80px 0; }
+  .nav__links { position: fixed; top: 0; right: -100%; width: 72%; max-width: 300px; height: 100vh; background: rgba(15,26,46,0.98); flex-direction: column; justify-content: center; gap: 2.5rem; padding: 2rem; transition: right var(--trans); border-left: 1px solid rgba(184,150,90,0.12); }
+  .nav__links.open { right: 0; }
+  .nav__toggle { display: flex; }
+  .offer__modules { grid-template-columns: 1fr; }
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .testimonials__grid .testimonial:last-child { display: block; }
+  .hero__social-proof { flex-wrap: wrap; gap: 1.5rem; }
+  .divider-strip__inner { gap: 1rem; }
+}
