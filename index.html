@@ -1,313 +1,367 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elise Hartwell — Wealth Strategy for High-Earning Women</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cormorant+SC:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#5c5c5b",
+                        "on-surface": "#383830",
+                        "primary": "#5f5e5e",
+                        "tertiary-fixed-dim": "#e7e5e4",
+                        "tertiary-fixed": "#f5f3f3",
+                        "tertiary-dim": "#585858",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#faf7f6",
+                        "on-surface-variant": "#65655b",
+                        "on-primary-fixed": "#3f3f3f",
+                        "surface-dim": "#e4e3d5",
+                        "secondary-dim": "#6c5435",
+                        "on-tertiary-fixed-variant": "#666666",
+                        "on-secondary-container": "#654d2f",
+                        "surface-container-highest": "#eae9dc",
+                        "on-primary-container": "#525151",
+                        "on-primary-fixed-variant": "#5c5b5b",
+                        "error": "#a64542",
+                        "tertiary": "#646464",
+                        "surface-variant": "#eae9dc",
+                        "on-tertiary-fixed": "#494949",
+                        "primary-fixed-dim": "#d6d4d3",
+                        "surface-container-high": "#f0eee3",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fffcf6",
+                        "error-dim": "#4e0309",
+                        "inverse-on-surface": "#9e9d98",
+                        "surface-bright": "#fffcf6",
+                        "tertiary-container": "#f5f3f3",
+                        "secondary-fixed-dim": "#f1cfa8",
+                        "primary-container": "#e4e2e1",
+                        "primary-fixed": "#e4e2e1",
+                        "inverse-surface": "#0e0e0b",
+                        "secondary-fixed": "#ffddb6",
+                        "on-error-container": "#752121",
+                        "error-container": "#fe8983",
+                        "surface": "#fffcf6",
+                        "secondary": "#796040",
+                        "on-secondary-fixed": "#513b1e",
+                        "secondary-container": "#ffddb6",
+                        "surface-container": "#f6f4ea",
+                        "outline": "#818176",
+                        "on-background": "#383830",
+                        "inverse-primary": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-low": "#fcf9f1",
+                        "primary-dim": "#535252",
+                        "outline-variant": "#babaae",
+                        "on-secondary-fixed-variant": "#705738",
+                        "on-error": "#ffffff"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fffcf6; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
 </head>
-<body>
+<body class="bg-background text-on-surface selection:bg-secondary/20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-[#fffcf6]/80 backdrop-blur-md dark:bg-stone-900/80">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-6 md:px-12 py-6">
+<span class="text-2xl font-['Noto_Serif'] font-light tracking-tighter text-[#5f5e5e] dark:text-stone-100">Sovereignty</span>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#method">The Method</a>
+<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#insights">Insights</a>
+<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#legacy">Legacy</a>
+<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#strategy">Strategy</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 text-xs tracking-[0.2em] uppercase font-label font-medium hover:bg-secondary transition-all duration-500">
+                Apply Now
+            </button>
+</div>
+</nav>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav__logo">Elise Hartwell</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
-    <ul class="nav__links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#offer">The Offer</a></li>
-      <li><a href="#testimonials">Stories</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact" class="nav__cta">Work With Me</a></li>
-    </ul>
-  </nav>
+<!-- Hero Section with bottom spacing (mb-12 on mobile, mb-20 on desktop) -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden mb-12 md:mb-20">
+<div class="container mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 z-10">
+<p class="label-md uppercase tracking-[0.3em] text-secondary mb-6 font-semibold">The Sovereignty Method</p>
+<h1 class="text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-primary font-light mb-8 -tracking-[0.03em]">
+                    Build wealth that <br/>matches your <span class="italic font-normal">ambition</span>.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-xl leading-relaxed mb-12">
+                    A curated architectural approach to financial mastery for high-earning women who have mastered the career, but seek to command the capital.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-primary text-on-primary px-10 py-5 text-sm tracking-widest uppercase font-label font-semibold hover:bg-secondary transition-all">
+                        Begin the Architecture
+                    </button>
+<button class="border border-outline-variant/30 text-primary px-10 py-5 text-sm tracking-widest uppercase font-label font-semibold hover:border-secondary transition-all">
+                        View The Strategy
+                    </button>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-highest overflow-hidden">
+<img alt="Elise Hartwell Portrait" class="w-full h-full object-cover grayscale opacity-90 object-right" data-alt="Premium editorial portrait of Elise Hartwell in a minimal, high-end professional setting" src="https://lh3.googleusercontent.com/aida/ADBb0uiPxlmUjX1FFvdT4rsLOmrKsuExorf8YTgSachyvCAbaCtp6H7MBUCFJUmTKMzibZ0C39kFNfpCuPdwBalfULAoQJ5aZTjmUiztFmEwxNK4KXH6zlQkDQFOmWxmFuczIB2RSe_bAjhbP4cLoOabAftXbgNR8Doefmwqu5JAOq80BeHgytxV42IJLMhk4SzAMZwMLYSmttW6y6LtxEpsxdfi8Llb27eLJe3PQFqEI3A7_TctBKZwF0Y_Y8CNDcRl6GmB18UvOlKZHtI"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 md:p-12 max-w-[280px]">
+<p class="text-secondary text-sm tracking-widest uppercase mb-2">Philosophy</p>
+<p class="text-primary font-headline text-lg italic leading-snug">"Wealth is not just a number; it is the infrastructure of your freedom."</p>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- HERO — split with visual panel -->
-  <section class="hero" id="hero">
-    <div class="hero__left">
-      <div class="hero__content">
-        <p class="hero__eyebrow reveal">Wealth Strategy · Private Coaching · London</p>
-        <h1 class="hero__heading reveal">
-          You've earned<br />well. Now build<br /><em>wealth that lasts.</em>
-        </h1>
-        <p class="hero__sub reveal">
-          A private coaching experience for high-earning women ready to stop trading time for income and start building something that compounds.
-        </p>
-        <div class="hero__ctas reveal">
-          <a href="#contact" class="btn btn--navy">Begin the Conversation</a>
-          <a href="#offer" class="btn btn--ghost">The Offer</a>
-        </div>
-        <div class="hero__social-proof reveal">
-          <div class="hero__sp-item">
-            <span class="hero__sp-num">£40M+</span>
-            <span class="hero__sp-label">Client wealth restructured</span>
-          </div>
-          <div class="hero__sp-div"></div>
-          <div class="hero__sp-item">
-            <span class="hero__sp-num">200+</span>
-            <span class="hero__sp-label">Women coached</span>
-          </div>
-          <div class="hero__sp-div"></div>
-          <div class="hero__sp-item">
-            <span class="hero__sp-num">8 yrs</span>
-            <span class="hero__sp-label">Private wealth background</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero__right reveal">
-      <div class="hero__visual">
-        <div class="hero__visual-bg"></div>
-        <div class="hero__visual-card">
-          <p class="hero__visual-card-label">Current Cohort</p>
-          <p class="hero__visual-card-heading">The Sovereignty<br />Method</p>
-          <div class="hero__visual-card-stat">
-            <span>6 places</span>
-            <span class="hero__visual-card-dot">·</span>
-            <span>6 months</span>
-            <span class="hero__visual-card-dot">·</span>
-            <span>£6,000</span>
-          </div>
-          <div class="hero__visual-card-bar">
-            <div class="hero__visual-card-fill" style="width: 66%"></div>
-          </div>
-          <p class="hero__visual-card-sub">4 of 6 places filled</p>
-        </div>
-        <div class="hero__visual-quote">
-          <p>"The most important financial decision you make is the one to take it seriously."</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Social Proof Strip - now with comfortable distance from hero buttons -->
+<section class="bg-surface-container-high py-16">
+<div class="container mx-auto px-6 md:px-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center items-center">
+<div class="flex flex-col gap-2">
+<span class="text-3xl md:text-4xl font-headline text-primary">£42M+</span>
+<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Restructured Assets</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-3xl md:text-4xl font-headline text-primary">120+</span>
+<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Private Client Portfolios</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-3xl md:text-4xl font-headline text-primary">15+</span>
+<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Years Financial Strategy</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-3xl md:text-4xl font-headline text-primary">94%</span>
+<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Efficiency Optimization</span>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- DIVIDER STRIP -->
-  <div class="divider-strip">
-    <div class="divider-strip__inner">
-      <span class="reveal">Financial Strategy</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Wealth Architecture</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Mindset Rewiring</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Legacy Planning</span>
-      <span class="divider-strip__dot reveal">✦</span>
-      <span class="reveal">Investment Foundations</span>
-    </div>
-  </div>
+<!-- The rest of the page unchanged (About, Method, Testimonials, FAQ, Contact, Footer) -->
+<!-- Narrative 'About' Section -->
+<section class="py-32 overflow-hidden bg-background">
+<div class="container mx-auto px-6 md:px-12">
+<div class="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
+<div class="w-full lg:w-1/2 relative order-2 lg:order-1">
+<div class="bg-surface-container-low absolute inset-0 -translate-x-10 translate-y-10"></div>
+<div class="relative aspect-square md:aspect-video lg:aspect-[3/4] overflow-hidden">
+<img alt="Luxury Architecture Detail" class="w-full h-full object-cover brightness-95 grayscale object-right" data-alt="Elise Hartwell in her workspace, blending analytical precision with architectural elegance" src="https://lh3.googleusercontent.com/aida/ADBb0uiPxlmUjX1FFvdT4rsLOmrKsuExorf8YTgSachyvCAbaCtp6H7MBUCFJUmTKMzibZ0C39kFNfpCuPdwBalfULAoQJ5aZTjmUiztFmEwxNK4KXH6zlQkDQFOmWxmFuczIB2RSe_bAjhbP4cLoOabAftXbgNR8Doefmwqu5JAOq80BeHgytxV42IJLMhk4SzAMZwMLYSmttW6y6LtxEpsxdfi8Llb27eLJe3PQFqEI3A7_TctBKZwF0Y_Y8CNDcRl6GmB18UvOlKZHtI"/>
+</div>
+</div>
+<div class="w-full lg:w-1/2 order-1 lg:order-2">
+<span class="text-secondary text-xs tracking-[0.4em] uppercase block mb-8">The Curator</span>
+<h2 class="text-4xl md:text-5xl font-headline leading-tight text-primary mb-10">
+                        Meet Elise Hartwell: Architect of <span class="italic">Sovereign Wealth</span>.
+                    </h2>
+<div class="space-y-6 text-on-surface-variant font-light text-lg leading-relaxed">
+<p>Most high-earning women are masters of income, but few are masters of wealth. There is a gap between earning power and long-term sovereignty that traditional financial advice fails to bridge.</p>
+<p>I created The Sovereignty Method for the woman who demands more than a spreadsheet. You require a bespoke financial infrastructure that supports your legacy, reduces your cognitive load, and matches the sophistication of your professional achievements.</p>
+<p class="font-medium text-primary pt-4">This is not management. This is architecture.</p>
+</div>
+<div class="mt-12 flex items-center gap-8">
+<div class="h-px bg-outline-variant/30 flex-grow"></div>
+<span class="font-headline italic text-primary text-2xl">Elise Hartwell</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="container about__grid">
-      <div class="about__image-col reveal">
-        <div class="about__portrait-wrap">
-          <div class="about__portrait"></div>
-        </div>
-        <div class="about__badge">
-          <p class="about__badge-num">94%</p>
-          <p class="about__badge-label">Client retention rate</p>
-        </div>
-      </div>
-      <div class="about__text-col">
-        <p class="label reveal">About Elise</p>
-        <h2 class="section__heading reveal">Strategy built on<br />truth, <em>not performance.</em></h2>
-        <p class="body-text reveal">After a decade in private wealth management at two of London's oldest firms, I left with one realisation: the women earning the most were often building the least.</p>
-        <p class="body-text reveal" style="margin-top: 1.2rem;">Not from lack of intelligence. Not from lack of ambition. From never being given a framework that put their financial future first — rather than the interests of an institution.</p>
-        <p class="body-text reveal" style="margin-top: 1.2rem;">I built Hartwell Coaching to change that. My work is part financial strategy, part mindset architecture — because knowing what to do and actually doing it are two entirely different problems.</p>
-        <a href="#contact" class="btn btn--outline reveal" style="margin-top: 2.5rem;">Work With Elise</a>
-      </div>
-    </div>
-  </section>
+<!-- The Sovereignty Method: 6 Modules -->
+<section class="py-32 bg-surface-container-low" id="method">
+<div class="container mx-auto px-6 md:px-12">
+<div class="text-center max-w-3xl mx-auto mb-24">
+<span class="text-secondary text-xs tracking-[0.4em] uppercase block mb-6">The Framework</span>
+<h2 class="text-5xl font-headline text-primary mb-8 italic">The 6-Month Private Engagement</h2>
+<p class="text-on-surface-variant text-lg font-light leading-relaxed">A meticulously sequenced progression from diagnostic audit to structural legacy, designed for maximum efficiency and absolute clarity.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+<!-- Module 1 -->
+<div class="p-12 bg-surface-container-lowest border-r border-b border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
+<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">01</span>
+<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">The Audit</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">A ruthless examination of current capital, tax efficiencies, and leakages. We start by seeing the architecture as it truly is.</p>
+</div>
+<!-- Module 2 -->
+<div class="p-12 bg-surface-container-lowest border-r border-b border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
+<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">02</span>
+<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">The Architecture</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Designing the new structural blueprint. Allocation strategies that prioritize both immediate liquidity and generational growth.</p>
+</div>
+<!-- Module 3 -->
+<div class="p-12 bg-surface-container-lowest lg:border-b border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
+<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">03</span>
+<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">The Mindset</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Decoupling identity from income. Shifting from the 'earner' mentality to the 'sovereign' perspective of a capital commander.</p>
+</div>
+<!-- Module 4 -->
+<div class="p-12 bg-surface-container-lowest border-r border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
+<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">04</span>
+<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">Foundations</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Operationalizing the strategy. Establishing the trusts, entities, and vehicles required for long-term protection.</p>
+</div>
+<!-- Module 5 -->
+<div class="p-12 bg-surface-container-lowest border-r border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
+<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">05</span>
+<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">Accountability</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Precision execution. Monthly stress-testing of the portfolio against the architecture to ensure zero drift from our objectives.</p>
+</div>
+<!-- Module 6 -->
+<div class="p-12 bg-surface-container-lowest group hover:bg-primary transition-colors duration-700">
+<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">06</span>
+<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">Legacy</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Transitioning from accumulation to endowment. Defining how wealth serves your life, your family, and your impact.</p>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- OFFER -->
-  <section class="offer section" id="offer">
-    <div class="container">
-      <div class="offer__header">
-        <p class="label reveal">The Programme</p>
-        <h2 class="section__heading reveal">The Sovereignty Method.<br /><em>Six months, privately.</em></h2>
-        <p class="offer__sub reveal">This is not a course. Not group coaching. One sustained private engagement designed to restructure how you relate to money at every level.</p>
-      </div>
-      <div class="offer__modules">
-        <div class="offer__module reveal">
-          <span class="offer__module-num">01</span>
-          <div>
-            <h3>Financial Clarity Audit</h3>
-            <p>A complete, honest picture of where you stand — income, assets, liabilities, and the blind spots you've been avoiding. We start with truth.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">02</span>
-          <div>
-            <h3>Wealth Architecture</h3>
-            <p>A bespoke 5-year wealth plan built around your life, your values, and your timeline. Not a generic spreadsheet. A real strategy.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">03</span>
-          <div>
-            <h3>Mindset Rewiring</h3>
-            <p>Identifying and dismantling the earning and spending patterns keeping your wealth ceiling exactly where it is. The work most coaches avoid.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">04</span>
-          <div>
-            <h3>Investment Foundations</h3>
-            <p>Practical guidance on building your investment portfolio — ISAs, pensions, property, and beyond. Demystified, entirely.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">05</span>
-          <div>
-            <h3>Private Accountability</h3>
-            <p>Bi-weekly 1:1 sessions, unlimited voice note access, and real-time support through every financial decision that arises.</p>
-          </div>
-        </div>
-        <div class="offer__module reveal">
-          <span class="offer__module-num">06</span>
-          <div>
-            <h3>Legacy Planning</h3>
-            <p>Structuring your wealth to outlast you. Wills, trusts, generational transfer — the conversation that turns income into inheritance.</p>
-          </div>
-        </div>
-      </div>
-      <div class="offer__investment reveal">
-        <p class="offer__investment-label">Investment</p>
-        <p class="offer__investment-price">£6,000</p>
-        <p class="offer__investment-note">Full programme · Six months · Strictly limited to 6 clients per cohort</p>
-        <a href="#contact" class="btn btn--navy">Apply for a Place</a>
-      </div>
-    </div>
-  </section>
+<!-- Client Stories: Elegant Testimonial Grid -->
+<section class="py-32 bg-background">
+<div class="container mx-auto px-6 md:px-12">
+<div class="mb-20">
+<h2 class="text-4xl md:text-5xl font-headline text-primary mb-4 italic">Sovereign Stories</h2>
+<div class="w-24 h-1 bg-secondary mb-8"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+<!-- Testimonial 1 -->
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-1/3 aspect-[3/4] bg-surface-container-highest overflow-hidden shrink-0">
+<img alt="Sarah J. Portrait" class="w-full h-full object-cover grayscale" data-alt="Modern close-up portrait of Sarah J., tech founder" src="https://lh3.googleusercontent.com/aida/ADBb0uiu1GA92Gf96p1qnk8h4ndha2iqu46Dhf8nRRiZ3OHEdFAuy_1y33nRm9yJv8jnYW065dmhXYCmV4R-Jrv6Eth7hTlwWud7L1h2gqKyuAS7jmzwnVmd8o5OwqJqpsRCekfPvwRRRDv_FU333V0B-qJ523TA899HR6D8sctd3RfsB5aOL5PMAmpzDr8-yFqhiIYOddKH7dwEvo7J0GDGNcKigle1-qHK8y6OTJVkx7lJcinKUCYF_tRcdQxCHHfZ5T99bq9fLoiUsKo"/>
+</div>
+<div class="flex flex-col">
+<span class="material-symbols-outlined text-secondary mb-4" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-on-surface text-xl font-light italic leading-relaxed mb-6">"Elise didn't just fix my finances; she gave me back my time. My wealth now operates like a silent engine in the background, allowing me to focus on my CEO role with total peace of mind."</p>
+<p class="text-primary font-bold tracking-widest text-xs uppercase">— SARAH J., TECH FOUNDER</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="flex flex-col md:flex-row gap-8 items-start md:mt-24">
+<div class="w-full md:w-1/3 aspect-[3/4] bg-surface-container-highest overflow-hidden shrink-0">
+<img alt="Victoria M. Portrait" class="w-full h-full object-cover grayscale" data-alt="Elegant portrait of Victoria M., partner at magic circle firm" src="https://lh3.googleusercontent.com/aida/ADBb0ujLzVcWwKdyRfgvfi_BklxZrbu8OtsECgaExOjrhjNmGBHHz7QuyofqdVzAfC0WZy_3zKX0V4CiF1nORIHXfRSV2NKclk_JGT3q5SnaO-HXqUyaH_1grvUrEhTxZpksMx2d26HuxqyEBIaODeeaaVHmm1IYCIfTzsHg0QR6bZFRv_wmZf8HHpUKPk2D_EsZXZ385UjHEUMCdg6s99wziR3X5ImzXv9QP3Xcx81txbwhJauNGyIWAYpXuxjigJ2wkCj79nPwzRlSzR0"/>
+</div>
+<div class="flex flex-col">
+<span class="material-symbols-outlined text-secondary mb-4" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-on-surface text-xl font-light italic leading-relaxed mb-6">"The Method is the most high-ROI investment I've made in a decade. We uncovered £2M in untapped potential simply by restructuring our tax and trust foundations."</p>
+<p class="text-primary font-bold tracking-widest text-xs uppercase">— VICTORIA M., PARTNER AT MAGIC CIRCLE FIRM</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials section" id="testimonials">
-    <div class="container">
-      <p class="label reveal">Client Stories</p>
-      <h2 class="section__heading reveal">Words from women<br /><em>who did the work.</em></h2>
-      <div class="testimonials__grid">
-        <div class="testimonial reveal">
-          <p class="testimonial__text">"I was earning £180k and genuinely didn't know where it was going. Six months in, I have a pension I'm actually contributing to, a property investment in motion, and — for the first time — I feel like I'm in charge of my future."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__av testimonial__av--1"></div>
-            <div>
-              <p class="testimonial__name">Sarah M.</p>
-              <p class="testimonial__role">Senior Director · London</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial reveal">
-          <p class="testimonial__text">"Elise doesn't just give you a plan — she changes the way you think. I came in believing I was bad with money. I left knowing that was a story I'd inherited, not a fact."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__av testimonial__av--2"></div>
-            <div>
-              <p class="testimonial__name">Dr. Amara T.</p>
-              <p class="testimonial__role">Consultant Physician · Manchester</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial reveal">
-          <p class="testimonial__text">"My net worth has grown more in one year post-coaching than in the previous five combined. Elise holds you to a standard you didn't know you could reach."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__av testimonial__av--3"></div>
-            <div>
-              <p class="testimonial__name">Priya R.</p>
-              <p class="testimonial__role">Founder & CEO · Edinburgh</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- FAQ Accordion -->
+<section class="py-32 bg-surface-container-lowest">
+<div class="container mx-auto px-6 md:px-12 max-w-4xl">
+<h2 class="text-4xl font-headline text-primary mb-16 text-center italic">The Specifics</h2>
+<div class="space-y-4">
+<div class="border-b border-outline-variant/30 py-8">
+<div class="flex justify-between items-center cursor-pointer group">
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Is this suitable for women who already have a wealth manager?</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
+</div>
+</div>
+<div class="border-b border-outline-variant/30 py-8">
+<div class="flex justify-between items-center cursor-pointer group">
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">What is the minimum entry criteria for a private engagement?</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
+</div>
+</div>
+<div class="border-b border-outline-variant/30 py-8">
+<div class="flex justify-between items-center cursor-pointer group">
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">How much time will I need to commit personally?</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
+</div>
+</div>
+<div class="border-b border-outline-variant/30 py-8">
+<div class="flex justify-between items-center cursor-pointer group">
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Does The Method include legal and tax implementation?</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- FAQ -->
-  <section class="faq section" id="faq">
-    <div class="container faq__grid">
-      <div class="faq__left">
-        <p class="label reveal">FAQ</p>
-        <h2 class="section__heading reveal">Questions worth<br /><em>asking first.</em></h2>
-      </div>
-      <div class="faq__right">
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">Who is this for? <span>+</span></button>
-          <div class="faq__a"><p>Women earning £80,000 or more who feel financially successful on paper but haven't yet translated that income into lasting wealth. Motivated, capable, ready for the right framework.</p></div>
-        </div>
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">Do I need existing investments? <span>+</span></button>
-          <div class="faq__a"><p>Not at all. Many clients begin with minimal investment experience. What matters is your income level and your commitment to the process.</p></div>
-        </div>
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">What does the six months look like? <span>+</span></button>
-          <div class="faq__a"><p>Bi-weekly 75-minute strategy sessions. Unlimited voice note access between sessions. All materials and your bespoke wealth plan in a private client portal.</p></div>
-        </div>
-        <div class="faq__item reveal">
-          <button class="faq__q" aria-expanded="false">Is the investment paid upfront? <span>+</span></button>
-          <div class="faq__a"><p>The £6,000 can be paid in full or split across two instalments of £3,200. Payment plans beyond two instalments are not available — full commitment produces full results.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Contact/Apply Form -->
+<section class="py-32 bg-background relative" id="strategy">
+<div class="container mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
+<div>
+<span class="text-secondary text-xs tracking-[0.4em] uppercase block mb-8">Exclusivity</span>
+<h2 class="text-5xl font-headline text-primary leading-tight mb-10 italic">Secure your <br/>consultation.</h2>
+<p class="text-on-surface-variant font-light text-xl leading-relaxed mb-8">
+                    Elise accepts only four private clients per quarter to ensure absolute precision and focus. Applications are reviewed within 48 business hours.
+                </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-on-surface-variant font-light">
+<span class="material-symbols-outlined text-secondary text-sm">lock</span>
+<span>Strictly confidential processing</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-light">
+<span class="material-symbols-outlined text-secondary text-sm">schedule</span>
+<span>Next intake starts September 2024</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 md:p-16">
+<form class="space-y-10">
+<div>
+<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Full Name</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2" type="text"/>
+</div>
+<div>
+<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Professional Position</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2" type="text"/>
+</div>
+<div>
+<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Current Portfolio Range (Est.)</label>
+<select class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2 cursor-pointer">
+<option>£1M - £5M</option>
+<option>£5M - £20M</option>
+<option>£20M+</option>
+</select>
+</div>
+<div>
+<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Core Objective</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2" rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 text-sm tracking-[0.3em] font-semibold uppercase hover:bg-secondary transition-all duration-500" type="submit">
+                        Request Private Access
+                    </button>
+</form>
+</div>
+</div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="container contact__inner">
-      <div class="contact__left">
-        <p class="label reveal">Apply</p>
-        <h2 class="section__heading reveal">Six places.<br /><em>One conversation.</em></h2>
-        <p class="body-text reveal">Tell me where you are, what you're building toward, and what's standing in the way. I respond personally within 48 hours.</p>
-        <p class="contact__caveat reveal">"There is no waitlist. Applications close when the six places are filled."</p>
-      </div>
-      <div class="contact__form-wrap reveal">
-        <form id="contactForm" novalidate>
-          <div class="form__group">
-            <label>Full Name</label>
-            <input type="text" placeholder="Your name" required />
-          </div>
-          <div class="form__group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form__group">
-            <label>Annual Income (approximate)</label>
-            <select required>
-              <option value="" disabled selected>Select a range</option>
-              <option>£80,000 – £120,000</option>
-              <option>£120,000 – £200,000</option>
-              <option>£200,000+</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label>What brings you here?</label>
-            <textarea rows="4" placeholder="Tell Elise what you're working toward and what's standing in the way..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn--navy btn--full">Send My Application</button>
-          <p class="form__note">Held in complete confidence. Never shared.</p>
-        </form>
-        <div class="form__success" id="formSuccess">
-          <div class="form__success-icon">✓</div>
-          <h3>Application received.</h3>
-          <p>Elise will be in touch within 48 hours.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__logo">Elise Hartwell</p>
-      <p class="footer__tagline">Financial Strategy · Wealth Mindset · Private Coaching</p>
-      <nav class="footer__nav">
-        <a href="#about">About</a>
-        <a href="#offer">The Offer</a>
-        <a href="#testimonials">Stories</a>
-        <a href="#contact">Apply</a>
-      </nav>
-      <p class="footer__legal">© 2025 Elise Hartwell Coaching Ltd · Privacy Policy</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<!-- Footer -->
+<footer class="bg-[#eae9dc] dark:bg-stone-950 px-12 py-16 w-full border-t border-[#babaae]/20 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-10 md:mb-0 text-center md:text-left">
+<span class="text-xl font-['Noto_Serif'] text-[#5f5e5e] dark:text-stone-200 block mb-2">Sovereignty</span>
+<p class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-300">© 2024 Sovereignty Wealth Strategy. All Rights Reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Terms of Service</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Disclaimer</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Contact</a>
+</div>
+</footer>
+</body></html>
