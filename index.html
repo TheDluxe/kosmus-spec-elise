@@ -1,367 +1,1338 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-tertiary-container": "#5c5c5b",
-                        "on-surface": "#383830",
-                        "primary": "#5f5e5e",
-                        "tertiary-fixed-dim": "#e7e5e4",
-                        "tertiary-fixed": "#f5f3f3",
-                        "tertiary-dim": "#585858",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary": "#faf7f6",
-                        "on-surface-variant": "#65655b",
-                        "on-primary-fixed": "#3f3f3f",
-                        "surface-dim": "#e4e3d5",
-                        "secondary-dim": "#6c5435",
-                        "on-tertiary-fixed-variant": "#666666",
-                        "on-secondary-container": "#654d2f",
-                        "surface-container-highest": "#eae9dc",
-                        "on-primary-container": "#525151",
-                        "on-primary-fixed-variant": "#5c5b5b",
-                        "error": "#a64542",
-                        "tertiary": "#646464",
-                        "surface-variant": "#eae9dc",
-                        "on-tertiary-fixed": "#494949",
-                        "primary-fixed-dim": "#d6d4d3",
-                        "surface-container-high": "#f0eee3",
-                        "on-secondary": "#ffffff",
-                        "on-tertiary": "#ffffff",
-                        "background": "#fffcf6",
-                        "error-dim": "#4e0309",
-                        "inverse-on-surface": "#9e9d98",
-                        "surface-bright": "#fffcf6",
-                        "tertiary-container": "#f5f3f3",
-                        "secondary-fixed-dim": "#f1cfa8",
-                        "primary-container": "#e4e2e1",
-                        "primary-fixed": "#e4e2e1",
-                        "inverse-surface": "#0e0e0b",
-                        "secondary-fixed": "#ffddb6",
-                        "on-error-container": "#752121",
-                        "error-container": "#fe8983",
-                        "surface": "#fffcf6",
-                        "secondary": "#796040",
-                        "on-secondary-fixed": "#513b1e",
-                        "secondary-container": "#ffddb6",
-                        "surface-container": "#f6f4ea",
-                        "outline": "#818176",
-                        "on-background": "#383830",
-                        "inverse-primary": "#ffffff",
-                        "surface-tint": "#5f5e5e",
-                        "surface-container-low": "#fcf9f1",
-                        "primary-dim": "#535252",
-                        "outline-variant": "#babaae",
-                        "on-secondary-fixed-variant": "#705738",
-                        "on-error": "#ffffff"
-                    },
-                    "fontFamily": {
-                        "headline": ["Noto Serif"],
-                        "body": ["Plus Jakarta Sans"],
-                        "label": ["Plus Jakarta Sans"]
-                    }
-                },
-            },
-        }
-    </script>
+<html lang="en" data-site="elise">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Elise Method — Sovereignty Financial Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fffcf6; }
-        h1, h2, h3 { font-family: 'Noto Serif', serif; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-    </style>
+/* ── Tokens ── */
+:root {
+  --void:        #080608;
+  --void-soft:   #0F0D10;
+  --void-mid:    #1A171C;
+  --paper:       #F5F1EA;
+  --paper-warm:  #EDE7D9;
+  --ivory:       #FDFAF4;
+  --gold:        #B8912A;
+  --gold-lt:     #D4AD50;
+  --gold-pale:   #F0E4C0;
+  --rose:        #A0736A;
+  --rose-lt:     #C4968C;
+  --warm-mid:    #7A6E64;
+  --warm-lt:     #A89A8C;
+  --rule:        rgba(184,145,42,0.12);
+  --rule-paper:  rgba(120,108,96,0.18);
+
+  --fs-xs:   0.6rem;
+  --fs-sm:   0.78rem;
+  --fs-base: 1rem;
+  --fs-md:   1.2rem;
+  --fs-lg:   1.6rem;
+  --fs-xl:   2.2rem;
+  --fs-2xl:  3rem;
+  --fs-3xl:  clamp(2.8rem, 5.5vw, 5rem);
+  --fs-hero: clamp(3.2rem, 7vw, 6.5rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--void);
+  color: var(--paper);
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* grain */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 1;
+  pointer-events: none; opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px;
+}
+
+/* ── Cursor ── */
+#e-cursor-dot, #e-cursor-ring {
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+#e-cursor-dot {
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+#e-cursor-ring {
+  width: 28px; height: 28px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: all 0.28s var(--ease-out);
+}
+
+/* ── Nav ── */
+.e-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 1.5rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(8,6,8,0.96) 0%, transparent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.4s, background 0.4s;
+}
+.e-nav.scrolled {
+  background: rgba(8,6,8,0.97);
+  border-color: var(--rule);
+  backdrop-filter: blur(20px);
+}
+.e-nav-logo {
+  font-family: 'Cormorant SC', serif;
+  font-size: 1rem; letter-spacing: 0.3em;
+  color: var(--paper); text-decoration: none;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.e-nav-logo-mark {
+  width: 5px; height: 5px;
+  border-radius: 50%; background: var(--gold);
+}
+.e-nav-links {
+  display: flex; gap: 2.5rem; list-style: none;
+}
+.e-nav-links a {
+  font-size: var(--fs-xs); letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--warm-lt);
+  text-decoration: none; font-weight: 400;
+  transition: color 0.3s;
+}
+.e-nav-links a:hover { color: var(--gold-lt); }
+.e-nav-cta {
+  font-size: var(--fs-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  text-decoration: none;
+  border: 1px solid rgba(184,145,42,0.4);
+  padding: 0.6rem 1.5rem; font-weight: 500;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+}
+.e-nav-cta:hover {
+  background: var(--gold);
+  color: var(--void);
+  border-color: var(--gold);
+}
+
+/* ── Sections ── */
+section { position: relative; z-index: 2; }
+
+/* ── Section tag ── */
+.e-tag {
+  font-size: var(--fs-xs); letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2rem; font-weight: 500;
+}
+.e-tag::before {
+  content: ''; width: 1.5rem; height: 1px;
+  background: var(--gold);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(184,145,42,0.04) 0%, transparent 55%);
+}
+
+.hero-left {
+  padding: 6rem 4rem;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  position: relative; z-index: 2;
+  border-right: 1px solid var(--rule);
+}
+
+.hero-problem {
+  margin-bottom: 3rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--gold);
+  background: rgba(184,145,42,0.03);
+}
+.hero-problem-label {
+  font-size: var(--fs-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.hero-problem p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic;
+  color: var(--gold-pale); line-height: 1.6;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-hero);
+  font-weight: 300; line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--paper); margin-bottom: 2rem;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+
+.hero-sub {
+  font-size: var(--fs-sm); color: var(--warm-lt);
+  line-height: 1.8; max-width: 44ch; margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.hero-actions { display: flex; align-items: center; gap: 1.5rem; }
+
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--void);
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 1rem 2.5rem; text-decoration: none;
+  cursor: none; position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.btn-primary:hover { background: var(--gold-lt); }
+
+.btn-ghost {
+  display: inline-block;
+  color: var(--warm-lt);
+  font-size: var(--fs-xs); letter-spacing: 0.18em;
+  text-transform: uppercase; text-decoration: none;
+  border-bottom: 1px solid rgba(120,108,96,0.3);
+  padding-bottom: 0.2rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+.btn-ghost:hover { color: var(--gold-lt); border-color: var(--gold); }
+
+.hero-right {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 6rem 4rem 4rem;
+  background: var(--void-soft);
+}
+
+.hero-right-eyebrow {
+  position: absolute; top: 7rem; left: 4rem;
+  font-family: 'Cormorant SC', serif;
+  font-size: clamp(5rem, 12vw, 14rem);
+  font-weight: 300; color: transparent;
+  -webkit-text-stroke: 1px rgba(184,145,42,0.07);
+  letter-spacing: 0.08em;
+  pointer-events: none; user-select: none;
+  line-height: 1;
+}
+
+.hero-diagnostic {
+  position: relative; z-index: 2;
+}
+.hero-diagnostic-label {
+  font-size: var(--fs-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.hero-diagnostic-items { display: flex; flex-direction: column; gap: 0; }
+.hero-diag-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 1.25rem; align-items: start;
+}
+.hero-diag-item:first-child { border-top: 1px solid var(--rule); }
+.hero-diag-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 300;
+  color: rgba(184,145,42,0.2); line-height: 1;
+}
+.hero-diag-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-style: italic;
+  color: var(--gold-pale); margin-bottom: 0.25rem;
+}
+.hero-diag-body {
+  font-size: var(--fs-sm); color: var(--warm-lt); line-height: 1.5;
+}
+
+/* ── DIAGNOSIS STRIP ── */
+.diagnosis-strip {
+  padding: 3rem 4rem;
+  background: var(--void-mid);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.diag-item {
+  padding: 1.5rem 2rem;
+  border-right: 1px solid var(--rule);
+  text-align: center;
+}
+.diag-item:last-child { border-right: none; }
+.diag-item-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 300;
+  color: var(--gold); line-height: 1; margin-bottom: 0.4rem;
+}
+.diag-item-label {
+  font-size: var(--fs-xs); letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--warm-lt);
+  line-height: 1.4;
+}
+
+/* ── PROBLEM SECTION ── */
+.problem {
+  padding: 7rem 4rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+  border-bottom: 1px solid var(--rule);
+}
+.problem-left {}
+.problem-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-2xl); font-weight: 300;
+  line-height: 1.1; margin-bottom: 2rem;
+}
+.problem-left h2 em { font-style: italic; color: var(--gold); }
+.problem-left p {
+  font-size: var(--fs-sm); color: var(--warm-lt);
+  line-height: 1.8; margin-bottom: 1.5rem; max-width: 44ch;
+}
+.finding-block {
+  margin-top: 3rem;
+  padding: 2rem;
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--gold);
+  background: rgba(184,145,42,0.02);
+}
+.finding-block-label {
+  font-size: var(--fs-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.finding-block p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic;
+  color: var(--gold-pale); line-height: 1.6;
+}
+
+.problem-right {}
+.symptom-list { display: flex; flex-direction: column; gap: 0; }
+.symptom-item {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 1.5rem; align-items: start;
+}
+.symptom-item:first-child { border-top: 1px solid var(--rule); }
+.symptom-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; color: rgba(184,145,42,0.2);
+  font-weight: 300; line-height: 1; padding-top: 0.1rem;
+}
+.symptom-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic;
+  color: var(--gold-pale); margin-bottom: 0.4rem;
+}
+.symptom-body {
+  font-size: var(--fs-sm); color: var(--warm-lt); line-height: 1.6;
+}
+
+/* ── METHOD ── */
+.method {
+  padding: 7rem 4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.method-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: end; margin-bottom: 5rem;
+}
+.method-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-2xl); font-weight: 300; line-height: 1.1;
+}
+.method-header h2 em { font-style: italic; color: var(--gold); }
+.method-header p {
+  font-size: var(--fs-sm); color: var(--warm-lt); line-height: 1.8;
+}
+
+.phases-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--rule);
+}
+.phase-card {
+  background: var(--void-soft); padding: 3rem 2.5rem;
+  position: relative; overflow: hidden;
+  transition: background 0.4s;
+}
+.phase-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+.phase-card:hover::before { transform: scaleX(1); }
+.phase-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 300;
+  color: rgba(184,145,42,0.15); line-height: 1; margin-bottom: 1.5rem;
+}
+.phase-label {
+  font-size: var(--fs-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.phase-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-style: italic;
+  color: var(--gold-pale); line-height: 1.3; margin-bottom: 1rem;
+}
+.phase-body {
+  font-size: var(--fs-sm); color: var(--warm-lt); line-height: 1.7;
+}
+
+/* ── WHO THIS IS FOR ── */
+.who-section {
+  padding: 7rem 4rem;
+  background: var(--void-soft);
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+}
+.who-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-2xl); font-weight: 300;
+  line-height: 1.1; margin-bottom: 2rem;
+}
+.who-left h2 em { font-style: italic; color: var(--gold); }
+.who-left p {
+  font-size: var(--fs-sm); color: var(--warm-lt);
+  line-height: 1.8; max-width: 42ch;
+}
+.who-right {}
+.criteria-list { display: flex; flex-direction: column; gap: 0; }
+.criteria-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: flex-start; gap: 1rem;
+  font-size: var(--fs-sm); color: var(--warm-lt); line-height: 1.5;
+}
+.criteria-item:first-child { border-top: 1px solid var(--rule); }
+.criteria-item::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+.doctrine-box {
+  margin-top: 3rem; padding: 2rem 2.5rem;
+  background: var(--void-mid);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--gold);
+}
+.doctrine-box-label {
+  font-size: var(--fs-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--warm-lt);
+  margin-bottom: 1rem;
+}
+.doctrine-box p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-style: italic;
+  color: var(--gold-pale); line-height: 1.6;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials {
+  padding: 7rem 4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.testimonials h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-2xl); font-weight: 300;
+  line-height: 1.1; margin-bottom: 4rem;
+}
+.testimonials h2 em { font-style: italic; color: var(--gold); }
+.testimonials-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.testimonial-card {
+  padding: 2.5rem;
+  border: 1px solid var(--rule);
+  background: var(--void-soft);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; line-height: 1;
+  color: rgba(184,145,42,0.08);
+  position: absolute; top: 1rem; left: 1.5rem;
+  pointer-events: none;
+}
+.testimonial-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic;
+  color: var(--gold-pale); line-height: 1.7;
+  margin-bottom: 1.5rem; position: relative; z-index: 1;
+}
+.testimonial-attr {
+  font-size: var(--fs-xs); letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--warm-lt);
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: 6rem 4rem;
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: 6rem; align-items: start;
+  border-bottom: 1px solid var(--rule);
+}
+.faq-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-xl); font-weight: 300;
+  line-height: 1.2;
+}
+.faq-left h2 em { font-style: italic; color: var(--gold); }
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item:first-child { border-top: 1px solid var(--rule); }
+.faq-q {
+  padding: 1.5rem 0;
+  cursor: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic;
+  color: var(--gold-pale); line-height: 1.4;
+}
+.faq-icon {
+  width: 22px; height: 22px; flex-shrink: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 0.85rem;
+  font-style: normal; font-family: 'DM Sans', sans-serif;
+  transition: transform 0.3s, background 0.3s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); color: var(--void); border-color: var(--gold); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s var(--ease-out);
+  font-size: var(--fs-sm); color: var(--warm-lt); line-height: 1.75;
+}
+.faq-item.open .faq-a { max-height: 200px; }
+.faq-a-inner { padding-bottom: 1.5rem; }
+
+/* ── APPLY ── */
+.apply {
+  padding: 7rem 4rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+  background: var(--void-soft);
+}
+.apply-left {}
+.apply-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-2xl); font-weight: 300;
+  line-height: 1.1; margin-bottom: 1.5rem;
+}
+.apply-left h2 em { font-style: italic; color: var(--gold); }
+.apply-left p {
+  font-size: var(--fs-sm); color: var(--warm-lt);
+  line-height: 1.8; max-width: 40ch; margin-bottom: 2.5rem;
+}
+.apply-meta { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem; }
+.apply-meta-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: var(--fs-sm); color: var(--warm-lt);
+}
+.apply-meta-item::before { content: '→'; color: var(--gold); }
+
+.apply-form { display: flex; flex-direction: column; gap: 2rem; }
+.form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-field label {
+  font-size: var(--fs-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--warm-lt); font-weight: 500;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: transparent;
+  border: none; border-bottom: 1px solid var(--rule);
+  color: var(--gold-pale);
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--fs-sm); padding: 0.75rem 0;
+  outline: none; transition: border-color 0.3s; width: 100%;
+  -webkit-appearance: none;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-color: var(--gold); }
+.form-field select option { background: var(--void); color: var(--paper); }
+.form-field textarea { resize: none; line-height: 1.6; min-height: 80px; }
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: rgba(168,154,140,0.3); }
+.form-submit {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 1rem 2.5rem; cursor: none;
+  position: relative; overflow: hidden;
+  transition: color 0.3s; align-self: flex-start;
+}
+.form-submit::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--gold); transform: translateX(-101%);
+  transition: transform 0.3s var(--ease-out);
+}
+.form-submit:hover { color: var(--void); }
+.form-submit:hover::before { transform: translateX(0); }
+.form-submit span { position: relative; z-index: 1; }
+
+/* ── FOOTER ── */
+.e-footer {
+  padding: 4rem;
+  border-top: 1px solid var(--rule);
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 2rem;
+}
+.e-footer-logo {
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.1rem; letter-spacing: 0.3em;
+  color: var(--paper);
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.e-footer-logo-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.e-footer-doctrine {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem; font-style: italic;
+  color: var(--warm-lt); text-align: center;
+}
+.e-footer-nav {
+  display: flex; gap: 2rem; list-style: none; justify-content: flex-end;
+}
+.e-footer-nav a {
+  font-size: var(--fs-xs); letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(168,154,140,0.4);
+  text-decoration: none; transition: color 0.3s;
+}
+.e-footer-nav a:hover { color: var(--paper); }
+
+/* ── Reveal ── */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.rd1 { transition-delay: 0.1s; }
+.rd2 { transition-delay: 0.2s; }
+.rd3 { transition-delay: 0.3s; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 768px) {
+  .e-nav { padding: 1.25rem 1.5rem; }
+  .e-nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .problem, .method-header, .who-section, .apply { grid-template-columns: 1fr; gap: 3rem; }
+  .phases-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .faq { grid-template-columns: 1fr; }
+  .diagnosis-strip { grid-template-columns: 1fr; }
+  .e-footer { grid-template-columns: 1fr; text-align: center; }
+  .e-footer-nav { justify-content: center; }
+}
+</style>
 </head>
-<body class="bg-background text-on-surface selection:bg-secondary/20">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 rounded-none bg-[#fffcf6]/80 backdrop-blur-md dark:bg-stone-900/80">
-<div class="flex justify-between items-center max-w-[1440px] mx-auto px-6 md:px-12 py-6">
-<span class="text-2xl font-['Noto_Serif'] font-light tracking-tighter text-[#5f5e5e] dark:text-stone-100">Sovereignty</span>
-<div class="hidden md:flex items-center gap-10">
-<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#method">The Method</a>
-<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#insights">Insights</a>
-<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#legacy">Legacy</a>
-<a class="font-['Noto_Serif'] text-sm tracking-widest uppercase text-[#5f5e5e] dark:text-stone-400 opacity-80 hover:text-[#796040] transition-colors duration-300" href="#strategy">Strategy</a>
-</div>
-<button class="bg-primary text-on-primary px-8 py-3 text-xs tracking-[0.2em] uppercase font-label font-medium hover:bg-secondary transition-all duration-500">
-                Apply Now
-            </button>
-</div>
+<body>
+
+<div id="e-cursor-dot"></div>
+<div id="e-cursor-ring"></div>
+
+<!-- ── Nav ── -->
+<nav class="e-nav" id="e-nav">
+  <a href="#" class="e-nav-logo">
+    <span class="e-nav-logo-mark"></span>
+    THE ELISE METHOD
+  </a>
+  <ul class="e-nav-links">
+    <li><a href="#method">The Method</a></li>
+    <li><a href="#who">Who This Is For</a></li>
+    <li><a href="#faq">The Specifics</a></li>
+  </ul>
+  <a href="#apply" class="e-nav-cta">Apply for a Consultation</a>
 </nav>
 
-<!-- Hero Section with bottom spacing (mb-12 on mobile, mb-20 on desktop) -->
-<section class="relative min-h-screen flex items-center pt-24 overflow-hidden mb-12 md:mb-20">
-<div class="container mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12 items-center">
-<div class="md:col-span-7 z-10">
-<p class="label-md uppercase tracking-[0.3em] text-secondary mb-6 font-semibold">The Sovereignty Method</p>
-<h1 class="text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-primary font-light mb-8 -tracking-[0.03em]">
-                    Build wealth that <br/>matches your <span class="italic font-normal">ambition</span>.
-                </h1>
-<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-xl leading-relaxed mb-12">
-                    A curated architectural approach to financial mastery for high-earning women who have mastered the career, but seek to command the capital.
-                </p>
-<div class="flex flex-col sm:flex-row gap-6">
-<button class="bg-primary text-on-primary px-10 py-5 text-sm tracking-widest uppercase font-label font-semibold hover:bg-secondary transition-all">
-                        Begin the Architecture
-                    </button>
-<button class="border border-outline-variant/30 text-primary px-10 py-5 text-sm tracking-widest uppercase font-label font-semibold hover:border-secondary transition-all">
-                        View The Strategy
-                    </button>
-</div>
-</div>
-<div class="md:col-span-5 relative">
-<div class="aspect-[4/5] bg-surface-container-highest overflow-hidden">
-<img alt="Elise Hartwell Portrait" class="w-full h-full object-cover grayscale opacity-90 object-right" data-alt="Premium editorial portrait of Elise Hartwell in a minimal, high-end professional setting" src="https://lh3.googleusercontent.com/aida/ADBb0uiPxlmUjX1FFvdT4rsLOmrKsuExorf8YTgSachyvCAbaCtp6H7MBUCFJUmTKMzibZ0C39kFNfpCuPdwBalfULAoQJ5aZTjmUiztFmEwxNK4KXH6zlQkDQFOmWxmFuczIB2RSe_bAjhbP4cLoOabAftXbgNR8Doefmwqu5JAOq80BeHgytxV42IJLMhk4SzAMZwMLYSmttW6y6LtxEpsxdfi8Llb27eLJe3PQFqEI3A7_TctBKZwF0Y_Y8CNDcRl6GmB18UvOlKZHtI"/>
-</div>
-<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 md:p-12 max-w-[280px]">
-<p class="text-secondary text-sm tracking-widest uppercase mb-2">Philosophy</p>
-<p class="text-primary font-headline text-lg italic leading-snug">"Wealth is not just a number; it is the infrastructure of your freedom."</p>
-</div>
-</div>
-</div>
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="hero-section">
+
+  <div class="hero-left">
+    <div class="e-tag reveal">The Elise Method</div>
+
+    <div class="hero-problem reveal rd1">
+      <div class="hero-problem-label">The Observed Gap</div>
+      <p>"High-earning women have mastered income. The financial architecture to hold and grow it is rarely built to match."</p>
+    </div>
+
+    <h1 class="reveal rd2">
+      Your capital<br>
+      should work as<br>
+      hard as <em>you do.</em>
+    </h1>
+
+    <p class="hero-sub reveal rd2">
+      A diagnostic-first engagement for senior professional women who have built serious income and need the financial architecture to protect, grow, and transmit it.
+    </p>
+
+    <div class="hero-actions reveal rd3">
+      <a href="#apply" class="btn-primary">Apply for a Consultation</a>
+      <a href="#method" class="btn-ghost">See the method</a>
+    </div>
+  </div>
+
+  <div class="hero-right" id="hero-right">
+    <div class="hero-right-eyebrow">ELISE</div>
+    <div class="hero-diagnostic">
+      <div class="hero-diagnostic-label">Where the gap typically lives</div>
+      <div class="hero-diagnostic-items">
+        <div class="hero-diag-item">
+          <div class="hero-diag-num">01</div>
+          <div>
+            <div class="hero-diag-title">"Income architecture not built for the income level."</div>
+            <div class="hero-diag-body">Standard financial structures are calibrated for median earners. At £150k–£500k+, the tax position, vehicle selection, and allocation sequence are fundamentally different.</div>
+          </div>
+        </div>
+        <div class="hero-diag-item">
+          <div class="hero-diag-num">02</div>
+          <div>
+            <div class="hero-diag-title">"Accumulation without an architecture to hold it."</div>
+            <div class="hero-diag-body">Income grows. The structural framework to convert that income into sustained, protected wealth is never built. The result: high earnings, low financial velocity.</div>
+          </div>
+        </div>
+        <div class="hero-diag-item">
+          <div class="hero-diag-num">03</div>
+          <div>
+            <div class="hero-diag-title">"No clear path from earner to owner of capital."</div>
+            <div class="hero-diag-body">The transition from earning well to commanding capital requires a deliberate structural intervention. It does not happen by default.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
-<!-- Social Proof Strip - now with comfortable distance from hero buttons -->
-<section class="bg-surface-container-high py-16">
-<div class="container mx-auto px-6 md:px-12">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center items-center">
-<div class="flex flex-col gap-2">
-<span class="text-3xl md:text-4xl font-headline text-primary">£42M+</span>
-<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Restructured Assets</span>
+<!-- ══════════════════════════════════════════
+     DIAGNOSIS STRIP
+══════════════════════════════════════════ -->
+<div class="diagnosis-strip reveal" id="diag-strip">
+  <div class="diag-item">
+    <div class="diag-item-num">6</div>
+    <div class="diag-item-label">Phase private<br>engagement</div>
+  </div>
+  <div class="diag-item">
+    <div class="diag-item-num">4</div>
+    <div class="diag-item-label">Private clients<br>per quarter</div>
+  </div>
+  <div class="diag-item">
+    <div class="diag-item-num">1</div>
+    <div class="diag-item-label">Diagnostic session<br>before anything else</div>
+  </div>
 </div>
-<div class="flex flex-col gap-2">
-<span class="text-3xl md:text-4xl font-headline text-primary">120+</span>
-<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Private Client Portfolios</span>
-</div>
-<div class="flex flex-col gap-2">
-<span class="text-3xl md:text-4xl font-headline text-primary">15+</span>
-<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Years Financial Strategy</span>
-</div>
-<div class="flex flex-col gap-2">
-<span class="text-3xl md:text-4xl font-headline text-primary">94%</span>
-<span class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Efficiency Optimization</span>
-</div>
-</div>
-</div>
+
+<!-- ══════════════════════════════════════════
+     PROBLEM SECTION
+══════════════════════════════════════════ -->
+<section class="problem" id="problem-section">
+
+  <div class="problem-left reveal">
+    <div class="e-tag">The Structural Problem</div>
+    <h2>
+      The income arrived.<br>
+      The architecture<br>
+      <em>did not.</em>
+    </h2>
+    <p>
+      Most financial advice is designed for average incomes. At £150,000–£500,000+, the tax structure is different, the legal vehicles available are different, and the sequencing of decisions carries different consequences.
+    </p>
+    <p>
+      The result for high-earning women is a specific and consistent pattern: substantial income, underperforming wealth position, and a cognitive load that should not exist at this level.
+    </p>
+
+    <div class="finding-block">
+      <div class="finding-block-label">The Clarifying Frame</div>
+      <p>"This is not a discipline problem. It is an architecture problem. Those require entirely different interventions."</p>
+    </div>
+  </div>
+
+  <div class="problem-right reveal rd2" id="symptom-list">
+    <div class="symptom-list">
+      <div class="symptom-item">
+        <div class="symptom-num">01</div>
+        <div>
+          <div class="symptom-title">"The income has grown. The financial anxiety has not reduced."</div>
+          <div class="symptom-body">Earnings increase, but the structural framework holding those earnings has not evolved to match. The anxiety is a signal of architectural mismatch — not financial failure.</div>
+        </div>
+      </div>
+      <div class="symptom-item">
+        <div class="symptom-num">02</div>
+        <div>
+          <div class="symptom-title">"Significant capital is accumulating without a plan for it."</div>
+          <div class="symptom-body">Income is arriving. A coherent architecture — investment sequencing, tax optimisation, vehicle selection, protection — has never been built around it. Capital is sitting, not working.</div>
+        </div>
+      </div>
+      <div class="symptom-item">
+        <div class="symptom-num">03</div>
+        <div>
+          <div class="symptom-title">"The wealth manager relationship is transactional, not strategic."</div>
+          <div class="symptom-body">Existing advisors manage what exists. No one has built a forward architecture for what the income level is capable of producing over the next decade. That gap is where The Elise Method operates.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
-<!-- The rest of the page unchanged (About, Method, Testimonials, FAQ, Contact, Footer) -->
-<!-- Narrative 'About' Section -->
-<section class="py-32 overflow-hidden bg-background">
-<div class="container mx-auto px-6 md:px-12">
-<div class="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
-<div class="w-full lg:w-1/2 relative order-2 lg:order-1">
-<div class="bg-surface-container-low absolute inset-0 -translate-x-10 translate-y-10"></div>
-<div class="relative aspect-square md:aspect-video lg:aspect-[3/4] overflow-hidden">
-<img alt="Luxury Architecture Detail" class="w-full h-full object-cover brightness-95 grayscale object-right" data-alt="Elise Hartwell in her workspace, blending analytical precision with architectural elegance" src="https://lh3.googleusercontent.com/aida/ADBb0uiPxlmUjX1FFvdT4rsLOmrKsuExorf8YTgSachyvCAbaCtp6H7MBUCFJUmTKMzibZ0C39kFNfpCuPdwBalfULAoQJ5aZTjmUiztFmEwxNK4KXH6zlQkDQFOmWxmFuczIB2RSe_bAjhbP4cLoOabAftXbgNR8Doefmwqu5JAOq80BeHgytxV42IJLMhk4SzAMZwMLYSmttW6y6LtxEpsxdfi8Llb27eLJe3PQFqEI3A7_TctBKZwF0Y_Y8CNDcRl6GmB18UvOlKZHtI"/>
-</div>
-</div>
-<div class="w-full lg:w-1/2 order-1 lg:order-2">
-<span class="text-secondary text-xs tracking-[0.4em] uppercase block mb-8">The Curator</span>
-<h2 class="text-4xl md:text-5xl font-headline leading-tight text-primary mb-10">
-                        Meet Elise Hartwell: Architect of <span class="italic">Sovereign Wealth</span>.
-                    </h2>
-<div class="space-y-6 text-on-surface-variant font-light text-lg leading-relaxed">
-<p>Most high-earning women are masters of income, but few are masters of wealth. There is a gap between earning power and long-term sovereignty that traditional financial advice fails to bridge.</p>
-<p>I created The Sovereignty Method for the woman who demands more than a spreadsheet. You require a bespoke financial infrastructure that supports your legacy, reduces your cognitive load, and matches the sophistication of your professional achievements.</p>
-<p class="font-medium text-primary pt-4">This is not management. This is architecture.</p>
-</div>
-<div class="mt-12 flex items-center gap-8">
-<div class="h-px bg-outline-variant/30 flex-grow"></div>
-<span class="font-headline italic text-primary text-2xl">Elise Hartwell</span>
-</div>
-</div>
-</div>
-</div>
+<!-- ══════════════════════════════════════════
+     METHOD
+══════════════════════════════════════════ -->
+<section class="method" id="method">
+  <div class="method-header">
+    <div class="reveal">
+      <div class="e-tag">The Engagement</div>
+      <h2>Six phases.<br>One <em>architecture.</em></h2>
+    </div>
+    <p class="reveal rd2">
+      Every engagement begins with a diagnostic session. We do not prescribe before we have found. The six-phase structure is built around a single outcome: a financial architecture that operates independently of your daily attention.
+    </p>
+  </div>
+
+  <div class="phases-grid reveal rd1" id="phases-grid">
+    <div class="phase-card">
+      <div class="phase-num">01</div>
+      <div class="phase-label">Phase One</div>
+      <div class="phase-title">"The Diagnostic"</div>
+      <p class="phase-body">A structured audit of current income, capital position, tax exposure, and structural gaps. We produce a written finding before any prescription is made.</p>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">02</div>
+      <div class="phase-label">Phase Two</div>
+      <div class="phase-title">"The Architecture"</div>
+      <p class="phase-body">Design of the structural blueprint. Allocation strategy, vehicle selection, sequencing. Built for the actual income level — not a template applied to your numbers.</p>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">03</div>
+      <div class="phase-label">Phase Three</div>
+      <div class="phase-title">"The Restructure"</div>
+      <p class="phase-body">The structural shift from earner to capital commander. Tax position rebuilt. Existing vehicles evaluated against the architecture. Leakage identified and closed.</p>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">04</div>
+      <div class="phase-label">Phase Four</div>
+      <div class="phase-title">"The Foundations"</div>
+      <p class="phase-body">Operationalising the architecture. Protection layer established. Trust and entity structures implemented where the finding supports them.</p>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">05</div>
+      <div class="phase-label">Phase Five</div>
+      <div class="phase-title">"The Calibration"</div>
+      <p class="phase-body">Monthly stress-testing of the architecture against the objectives. Income changes, market movements, and life transitions absorbed without structural drift.</p>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">06</div>
+      <div class="phase-label">Phase Six</div>
+      <div class="phase-title">"The Legacy Layer"</div>
+      <p class="phase-body">Transition from accumulation to endowment. The architecture is documented, stress-tested, and extended to serve the next generation of decisions.</p>
+    </div>
+  </div>
 </section>
 
-<!-- The Sovereignty Method: 6 Modules -->
-<section class="py-32 bg-surface-container-low" id="method">
-<div class="container mx-auto px-6 md:px-12">
-<div class="text-center max-w-3xl mx-auto mb-24">
-<span class="text-secondary text-xs tracking-[0.4em] uppercase block mb-6">The Framework</span>
-<h2 class="text-5xl font-headline text-primary mb-8 italic">The 6-Month Private Engagement</h2>
-<p class="text-on-surface-variant text-lg font-light leading-relaxed">A meticulously sequenced progression from diagnostic audit to structural legacy, designed for maximum efficiency and absolute clarity.</p>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
-<!-- Module 1 -->
-<div class="p-12 bg-surface-container-lowest border-r border-b border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
-<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">01</span>
-<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">The Audit</h3>
-<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">A ruthless examination of current capital, tax efficiencies, and leakages. We start by seeing the architecture as it truly is.</p>
-</div>
-<!-- Module 2 -->
-<div class="p-12 bg-surface-container-lowest border-r border-b border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
-<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">02</span>
-<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">The Architecture</h3>
-<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Designing the new structural blueprint. Allocation strategies that prioritize both immediate liquidity and generational growth.</p>
-</div>
-<!-- Module 3 -->
-<div class="p-12 bg-surface-container-lowest lg:border-b border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
-<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">03</span>
-<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">The Mindset</h3>
-<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Decoupling identity from income. Shifting from the 'earner' mentality to the 'sovereign' perspective of a capital commander.</p>
-</div>
-<!-- Module 4 -->
-<div class="p-12 bg-surface-container-lowest border-r border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
-<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">04</span>
-<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">Foundations</h3>
-<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Operationalizing the strategy. Establishing the trusts, entities, and vehicles required for long-term protection.</p>
-</div>
-<!-- Module 5 -->
-<div class="p-12 bg-surface-container-lowest border-r border-outline-variant/10 group hover:bg-primary transition-colors duration-700">
-<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">05</span>
-<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">Accountability</h3>
-<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Precision execution. Monthly stress-testing of the portfolio against the architecture to ensure zero drift from our objectives.</p>
-</div>
-<!-- Module 6 -->
-<div class="p-12 bg-surface-container-lowest group hover:bg-primary transition-colors duration-700">
-<span class="text-outline-variant group-hover:text-on-primary/30 text-5xl font-headline block mb-8">06</span>
-<h3 class="text-2xl font-headline text-primary group-hover:text-on-primary mb-6">Legacy</h3>
-<p class="text-on-surface-variant group-hover:text-on-primary/80 font-light leading-relaxed">Transitioning from accumulation to endowment. Defining how wealth serves your life, your family, and your impact.</p>
-</div>
-</div>
-</div>
+<!-- ══════════════════════════════════════════
+     WHO THIS IS FOR
+══════════════════════════════════════════ -->
+<section class="who-section" id="who">
+
+  <div class="who-left reveal">
+    <div class="e-tag">Who This Is For</div>
+    <h2>
+      Not everyone gets<br>
+      the same <em>answer.</em>
+    </h2>
+    <p>
+      The Elise Method is not a group programme or a standardised system. It is a bespoke private engagement. The criteria below are diagnostic, not exclusionary — they exist to ensure the engagement produces the result it is designed for.
+    </p>
+
+    <div class="doctrine-box">
+      <div class="doctrine-box-label">The Clarion Doctrine</div>
+      <p>"Wealth architecture is not built from templates. It is built from findings. The findings come first."</p>
+    </div>
+  </div>
+
+  <div class="who-right reveal rd2" id="criteria-section">
+    <div class="e-tag">Entry Criteria</div>
+    <div class="criteria-list">
+      <div class="criteria-item">Senior professional or business owner with annual income of £150,000 or above</div>
+      <div class="criteria-item">Existing capital base with no coherent architecture built around it</div>
+      <div class="criteria-item">Recognition that the current financial structure was not designed for this income level</div>
+      <div class="criteria-item">Prepared to treat this as an architectural engagement — not a coaching relationship</div>
+      <div class="criteria-item">Available for the initial diagnostic session within the current intake window</div>
+    </div>
+
+    <div style="margin-top:2.5rem; padding:1.5rem 2rem; border:1px solid var(--rule); background:rgba(184,145,42,0.02);">
+      <div class="e-tag" style="margin-bottom:0.75rem;">Intake</div>
+      <p style="font-size:var(--fs-sm); color:var(--warm-lt); line-height:1.6;">Four private engagements per quarter. Applications reviewed within 48 hours. If the engagement is not the right fit, we will tell you — and tell you why.</p>
+    </div>
+  </div>
+
 </section>
 
-<!-- Client Stories: Elegant Testimonial Grid -->
-<section class="py-32 bg-background">
-<div class="container mx-auto px-6 md:px-12">
-<div class="mb-20">
-<h2 class="text-4xl md:text-5xl font-headline text-primary mb-4 italic">Sovereign Stories</h2>
-<div class="w-24 h-1 bg-secondary mb-8"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
-<!-- Testimonial 1 -->
-<div class="flex flex-col md:flex-row gap-8 items-start">
-<div class="w-full md:w-1/3 aspect-[3/4] bg-surface-container-highest overflow-hidden shrink-0">
-<img alt="Sarah J. Portrait" class="w-full h-full object-cover grayscale" data-alt="Modern close-up portrait of Sarah J., tech founder" src="https://lh3.googleusercontent.com/aida/ADBb0uiu1GA92Gf96p1qnk8h4ndha2iqu46Dhf8nRRiZ3OHEdFAuy_1y33nRm9yJv8jnYW065dmhXYCmV4R-Jrv6Eth7hTlwWud7L1h2gqKyuAS7jmzwnVmd8o5OwqJqpsRCekfPvwRRRDv_FU333V0B-qJ523TA899HR6D8sctd3RfsB5aOL5PMAmpzDr8-yFqhiIYOddKH7dwEvo7J0GDGNcKigle1-qHK8y6OTJVkx7lJcinKUCYF_tRcdQxCHHfZ5T99bq9fLoiUsKo"/>
-</div>
-<div class="flex flex-col">
-<span class="material-symbols-outlined text-secondary mb-4" style="font-variation-settings: 'FILL' 1;">format_quote</span>
-<p class="text-on-surface text-xl font-light italic leading-relaxed mb-6">"Elise didn't just fix my finances; she gave me back my time. My wealth now operates like a silent engine in the background, allowing me to focus on my CEO role with total peace of mind."</p>
-<p class="text-primary font-bold tracking-widest text-xs uppercase">— SARAH J., TECH FOUNDER</p>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="flex flex-col md:flex-row gap-8 items-start md:mt-24">
-<div class="w-full md:w-1/3 aspect-[3/4] bg-surface-container-highest overflow-hidden shrink-0">
-<img alt="Victoria M. Portrait" class="w-full h-full object-cover grayscale" data-alt="Elegant portrait of Victoria M., partner at magic circle firm" src="https://lh3.googleusercontent.com/aida/ADBb0ujLzVcWwKdyRfgvfi_BklxZrbu8OtsECgaExOjrhjNmGBHHz7QuyofqdVzAfC0WZy_3zKX0V4CiF1nORIHXfRSV2NKclk_JGT3q5SnaO-HXqUyaH_1grvUrEhTxZpksMx2d26HuxqyEBIaODeeaaVHmm1IYCIfTzsHg0QR6bZFRv_wmZf8HHpUKPk2D_EsZXZ385UjHEUMCdg6s99wziR3X5ImzXv9QP3Xcx81txbwhJauNGyIWAYpXuxjigJ2wkCj79nPwzRlSzR0"/>
-</div>
-<div class="flex flex-col">
-<span class="material-symbols-outlined text-secondary mb-4" style="font-variation-settings: 'FILL' 1;">format_quote</span>
-<p class="text-on-surface text-xl font-light italic leading-relaxed mb-6">"The Method is the most high-ROI investment I've made in a decade. We uncovered £2M in untapped potential simply by restructuring our tax and trust foundations."</p>
-<p class="text-primary font-bold tracking-widest text-xs uppercase">— VICTORIA M., PARTNER AT MAGIC CIRCLE FIRM</p>
-</div>
-</div>
-</div>
-</div>
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section class="testimonials" id="testimonials-section">
+  <div class="reveal">
+    <div class="e-tag">From the Engagements</div>
+    <h2>What changes when the<br>architecture is <em>correct.</em></h2>
+  </div>
+  <div class="testimonials-grid reveal rd2">
+    <div class="testimonial-card">
+      <p>"I had a wealth manager for three years. She told me I was doing well. The diagnostic session showed me I had left a material tax optimisation opportunity unaddressed for the entirety of that relationship. The finding alone was worth the engagement."</p>
+      <div class="testimonial-attr">Senior Partner · London · Private Engagement 2024</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"The shift I needed was not more information. It was a framework that matched the scale of what I was building. The Elise Method provided the architecture. What I do with it is now my decision — which is how it should be."</p>
+      <div class="testimonial-attr">Founder &amp; CEO · Financial Services · Private Engagement 2024</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"I came in thinking I needed investment advice. The diagnostic found a structural problem at the entity level that no one had ever identified. The prescription addressed the root cause, not the surface symptom."</p>
+      <div class="testimonial-attr">Executive Director · Private Equity · Private Engagement 2025</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"Most financial engagements start with a product. This one started with a question I had never been asked before: what does the architecture need to produce? The answer to that question built everything else."</p>
+      <div class="testimonial-attr">General Counsel · FTSE 250 · Private Engagement 2025</div>
+    </div>
+  </div>
 </section>
 
-<!-- FAQ Accordion -->
-<section class="py-32 bg-surface-container-lowest">
-<div class="container mx-auto px-6 md:px-12 max-w-4xl">
-<h2 class="text-4xl font-headline text-primary mb-16 text-center italic">The Specifics</h2>
-<div class="space-y-4">
-<div class="border-b border-outline-variant/30 py-8">
-<div class="flex justify-between items-center cursor-pointer group">
-<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Is this suitable for women who already have a wealth manager?</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
-</div>
-</div>
-<div class="border-b border-outline-variant/30 py-8">
-<div class="flex justify-between items-center cursor-pointer group">
-<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">What is the minimum entry criteria for a private engagement?</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
-</div>
-</div>
-<div class="border-b border-outline-variant/30 py-8">
-<div class="flex justify-between items-center cursor-pointer group">
-<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">How much time will I need to commit personally?</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
-</div>
-</div>
-<div class="border-b border-outline-variant/30 py-8">
-<div class="flex justify-between items-center cursor-pointer group">
-<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Does The Method include legal and tax implementation?</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">add</span>
-</div>
-</div>
-</div>
-</div>
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="faq-left reveal">
+    <div class="e-tag">Before You Apply</div>
+    <h2>Questions worth<br><em>asking.</em></h2>
+  </div>
+  <div class="reveal rd2">
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this suitable if I already have a wealth manager?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Most clients who engage The Elise Method have existing advisors. The engagement is not a replacement for asset management — it is the architectural layer that most wealth managers do not provide. The diagnostic session will determine whether there is a structural gap that the engagement can address.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the investment for a private engagement?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">The engagement investment is confirmed following the diagnostic session. We do not publish a single figure because the scope of the structural work varies materially by situation. What we can confirm: the investment is calibrated against the identified gap, not against an hourly rate.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much time does the engagement require from me?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">The diagnostic phase is the most intensive — expect three to four hours across the first two weeks. Once the architecture is built and operating, your active involvement reduces to a monthly review. The objective is a structure that requires minimal ongoing management from you.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does the engagement include legal and tax implementation?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">The Elise Method produces the architectural blueprint and coordinates the implementation with the relevant specialists — tax counsel, legal, and where appropriate, regulated investment advisors. We are the strategic layer that ensures those specialists are working toward a coherent outcome.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I am not accepted into the current intake?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">If the diagnostic criteria are not met or capacity is not available, we will tell you directly — and where possible, identify what would need to change for a future engagement to be productive. We do not hold applications in an open queue.</div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Contact/Apply Form -->
-<section class="py-32 bg-background relative" id="strategy">
-<div class="container mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
-<div>
-<span class="text-secondary text-xs tracking-[0.4em] uppercase block mb-8">Exclusivity</span>
-<h2 class="text-5xl font-headline text-primary leading-tight mb-10 italic">Secure your <br/>consultation.</h2>
-<p class="text-on-surface-variant font-light text-xl leading-relaxed mb-8">
-                    Elise accepts only four private clients per quarter to ensure absolute precision and focus. Applications are reviewed within 48 business hours.
-                </p>
-<div class="space-y-4">
-<div class="flex items-center gap-4 text-on-surface-variant font-light">
-<span class="material-symbols-outlined text-secondary text-sm">lock</span>
-<span>Strictly confidential processing</span>
-</div>
-<div class="flex items-center gap-4 text-on-surface-variant font-light">
-<span class="material-symbols-outlined text-secondary text-sm">schedule</span>
-<span>Next intake starts September 2024</span>
-</div>
-</div>
-</div>
-<div class="bg-surface-container-low p-10 md:p-16">
-<form class="space-y-10">
-<div>
-<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Full Name</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2" type="text"/>
-</div>
-<div>
-<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Professional Position</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2" type="text"/>
-</div>
-<div>
-<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Current Portfolio Range (Est.)</label>
-<select class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2 cursor-pointer">
-<option>£1M - £5M</option>
-<option>£5M - £20M</option>
-<option>£20M+</option>
-</select>
-</div>
-<div>
-<label class="block label-md text-on-surface-variant font-semibold tracking-widest uppercase mb-4">Core Objective</label>
-<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-all px-0 py-2" rows="3"></textarea>
-</div>
-<button class="w-full bg-primary text-on-primary py-5 text-sm tracking-[0.3em] font-semibold uppercase hover:bg-secondary transition-all duration-500" type="submit">
-                        Request Private Access
-                    </button>
-</form>
-</div>
-</div>
+<!-- ══════════════════════════════════════════
+     APPLY
+══════════════════════════════════════════ -->
+<section class="apply" id="apply">
+  <div class="apply-left reveal">
+    <div class="e-tag">The Application</div>
+    <h2>
+      Four clients.<br>
+      One <em>quarter.</em>
+    </h2>
+    <p>
+      This is not a contact form. It is the first step in the diagnostic process. Your answers inform whether the engagement is the right fit — and what the diagnostic session needs to find.
+    </p>
+    <div class="apply-meta">
+      <div class="apply-meta-item">Applications reviewed within 48 hours</div>
+      <div class="apply-meta-item">Diagnostic session offered on fit confirmation</div>
+      <div class="apply-meta-item">No obligation at application stage</div>
+    </div>
+  </div>
+
+  <div class="apply-right reveal rd2">
+    <form class="apply-form" onsubmit="return false;">
+      <div class="form-field">
+        <label>Full Name</label>
+        <input type="text" placeholder="—">
+      </div>
+      <div class="form-field">
+        <label>Professional Position</label>
+        <input type="text" placeholder="—">
+      </div>
+      <div class="form-field">
+        <label>Annual Income (approximate)</label>
+        <select>
+          <option value="" disabled selected>— Select range —</option>
+          <option>£150,000 – £250,000</option>
+          <option>£250,000 – £500,000</option>
+          <option>£500,000 – £1M</option>
+          <option>£1M+</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>What do you believe is the primary structural gap?</label>
+        <textarea placeholder="Your honest assessment. This is the pre-diagnostic. It will be compared to our findings." rows="4"></textarea>
+      </div>
+      <div class="form-field">
+        <label>What would a successful engagement produce in 12 months?</label>
+        <textarea placeholder="Be specific — a number, a structure, a position." rows="3"></textarea>
+      </div>
+      <button class="form-submit" type="submit"><span>Submit Application →</span></button>
+    </form>
+  </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-[#eae9dc] dark:bg-stone-950 px-12 py-16 w-full border-t border-[#babaae]/20 flex flex-col md:flex-row justify-between items-center">
-<div class="mb-10 md:mb-0 text-center md:text-left">
-<span class="text-xl font-['Noto_Serif'] text-[#5f5e5e] dark:text-stone-200 block mb-2">Sovereignty</span>
-<p class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-300">© 2024 Sovereignty Wealth Strategy. All Rights Reserved.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-10">
-<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Privacy Policy</a>
-<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Terms of Service</a>
-<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Disclaimer</a>
-<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#5f5e5e] dark:text-stone-500 hover:opacity-70 transition-opacity" href="#">Contact</a>
-</div>
+<!-- ── Footer ── -->
+<footer class="e-footer">
+  <div class="e-footer-logo">
+    <span class="e-footer-logo-dot"></span>
+    THE ELISE METHOD
+  </div>
+  <div class="e-footer-doctrine">"Capital should work as hard as the person who built it."</div>
+  <ul class="e-footer-nav">
+    <li><a href="#method">Method</a></li>
+    <li><a href="#who">Criteria</a></li>
+    <li><a href="#faq">Specifics</a></li>
+    <li><a href="#apply">Apply</a></li>
+  </ul>
 </footer>
-</body></html>
+
+<!-- ══════════════════════════════════════════
+     ANNOTATION DATA
+══════════════════════════════════════════ -->
+<script>
+window.KOSMUS_ANNOTATIONS = [
+  {
+    id: 'hero-problem',
+    hotspotTarget: '#hero-section .hero-left',
+    position: { top: '18%', right: '3%' },
+    decision: 'Hero leads with the observed structural gap — not the practitioner\'s offer or identity',
+    reasoning: 'The prospect at this income level has encountered financial services marketing before. Aspirational language ("build wealth that matches your ambition") reads as category-standard copy and produces no differentiation. The observed gap framing — stating a structural problem the prospect already feels but has not had named — creates immediate recognition. A prospect who reads "high-earning women have mastered income; the financial architecture to hold and grow it is rarely built to match" and feels seen has already made the first trust transfer before encountering the offer.',
+    rejected: 'The original hero led with "Build wealth that matches your ambition" — an aspiration, not a diagnosis. Aspirational headlines invite the prospect to evaluate whether the aspiration applies to them. A diagnostic observation assumes the situation and invites recognition. At the £150k–£500k level, recognition converts faster than aspiration.',
+    financialNote: 'A well-structured opening for a term sheet names the problem being solved — not the ambition of the solver. The prospect already has ambition. What they need is a specific named gap.'
+  },
+  {
+    id: 'symptom-list',
+    hotspotTarget: '#symptom-list',
+    position: { top: '8%', right: '3%' },
+    decision: 'Symptoms written in first-person quoted form — the prospect\'s own internal monologue, not clinical descriptions',
+    reasoning: 'Each symptom opens with a statement the target prospect has said to themselves or to a colleague. "The income has grown. The financial anxiety has not reduced" is internal experience, not marketing copy. When a prospect reads their own private observation in someone else\'s diagnostic language, the trust transfer is involuntary — they conclude the practitioner understands the situation without needing to be told. This is the fastest route to an application and it operates before any offer is presented.',
+    rejected: 'Bullet-pointed problem descriptions — "inefficient tax structuring," "underperforming investment allocation" — were rejected. Technical problem language requires the prospect to translate it into their own experience. Internal monologue language requires no translation. It is already in the right register.'
+  },
+  {
+    id: 'phases-grid',
+    hotspotTarget: '#phases-grid',
+    position: { top: '8%', right: '2%' },
+    decision: 'Six phases presented as an engagement structure — not as a curriculum or coaching programme',
+    reasoning: 'The language of coaching — sessions, modules, check-ins, accountability — positions the practitioner as a motivational partner. The language of engagement — phases, diagnostic, prescription, architecture — positions the practitioner as a structural specialist. The prospect at this level is not buying motivation or education. They are buying a system someone else has built and they will operate. "Phase One: The Diagnostic" signals that this has a sequence, it has been done before, and the practitioner has enough case history to name the phases. That signal is worth more than any credential listed.',
+    rejected: 'A module-based curriculum format — "Module 1: Foundations," "Module 2: Investment Strategy" — was rejected. Module language reads as educational product. Phase language reads as professional engagement. At this fee level, the prospect is buying the engagement, not the content.'
+  },
+  {
+    id: 'criteria-section',
+    hotspotTarget: '#criteria-section',
+    position: { top: '6%', right: '3%' },
+    decision: 'Entry criteria presented as diagnostic requirements — not as exclusion filters or status signals',
+    reasoning: 'Most high-end service pages use exclusivity language to create aspiration: "for the select few," "by application only." This framing is transparent and prospects at this level have encountered it repeatedly. Presenting criteria as diagnostic requirements — "these exist to ensure the engagement produces the result it is designed for" — reframes the qualification as protective of the prospect\'s outcome, not of the practitioner\'s brand. A prospect reading diagnostic criteria feels informed. A prospect reading exclusivity signals feels marketed to.',
+    rejected: '"By invitation only" and "limited to a select cohort of driven women" framing was rejected. Status-signal language attracts prospects who want the status. Diagnostic criteria language attracts prospects who want the result. These are different populations — and only one of them produces a productive engagement.'
+  }
+];
+</script>
+
+<!-- ══════════════════════════════════════════
+     ANNOTATION SYSTEM — ELISE ADAPTER
+══════════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  const ADAPTER = {
+    accentColor:    '#B8912A',
+    accentLight:    '#D4AD50',
+    accentPale:     '#F0E4C0',
+    panelBg:        '#0F0D10',
+    panelBorder:    'rgba(184,145,42,0.2)',
+    panelText:      '#F0E4C0',
+    panelSubtext:   'rgba(168,153,127,0.8)',
+    hotspotBg:      '#0F0D10',
+    hotspotPulse:   'rgba(184,145,42,0.3)',
+    toggleBg:       '#0F0D10',
+    toggleBorder:   'rgba(184,145,42,0.3)',
+    toggleText:     '#B8912A',
+    labelFont:      "'Cormorant SC', serif",
+    bodyFont:       "'DM Sans', sans-serif",
+    displayFont:    "'Cormorant Garamond', serif",
+    sectionDivider: 'rgba(184,145,42,0.15)',
+    rejectColor:    'rgba(168,153,127,0.5)',
+  };
+
+  let annotationsVisible = true;
+  let activePanel = null;
+
+  function init() {
+    injectStyles();
+    injectToggle();
+    if (window.KOSMUS_ANNOTATIONS && window.KOSMUS_ANNOTATIONS.length) {
+      window.KOSMUS_ANNOTATIONS.forEach(renderHotspot);
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+  }
+
+  function injectStyles() {
+    const a = ADAPTER;
+    const css = `
+      #kosmus-toggle {
+        position: fixed; top: 1.5rem; right: 1.5rem; z-index: 9000;
+        background: ${a.toggleBg}; border: 1px solid ${a.toggleBorder};
+        color: ${a.toggleText}; font-family: ${a.bodyFont};
+        font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em;
+        text-transform: uppercase; padding: 0.6rem 1.2rem;
+        cursor: pointer; display: flex; align-items: center; gap: 0.6rem;
+        transition: all 0.3s ease; backdrop-filter: blur(8px);
+      }
+      #kosmus-toggle:hover { border-color: ${a.accentColor}; }
+      #kosmus-toggle .toggle-dot { width: 6px; height: 6px; border-radius: 50%; background: ${a.accentColor}; transition: opacity 0.3s; }
+      #kosmus-toggle.annotations-off .toggle-dot { opacity: 0.3; }
+      .k-hotspot { position: absolute; z-index: 500; cursor: pointer; transform: translate(-50%, -50%); }
+      .k-hotspot-inner {
+        width: 28px; height: 28px; border-radius: 50%;
+        background: ${a.hotspotBg}; border: 1px solid ${a.accentColor};
+        display: flex; align-items: center; justify-content: center;
+        font-family: ${a.displayFont}; font-size: 0.75rem; color: ${a.accentColor};
+        position: relative; transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+      .k-hotspot:hover .k-hotspot-inner { transform: scale(1.15); border-color: ${a.accentLight}; }
+      .k-hotspot-inner::before {
+        content: ''; position: absolute; inset: -6px; border-radius: 50%;
+        border: 1px solid ${a.hotspotPulse}; animation: kPulse 2.5s ease-in-out infinite;
+      }
+      @keyframes kPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0; transform: scale(1.6); } }
+      .k-tooltip {
+        position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+        background: ${a.panelBg}; border: 1px solid ${a.panelBorder}; color: ${a.accentColor};
+        font-family: ${a.bodyFont}; font-size: 0.6rem; letter-spacing: 0.12em;
+        text-transform: uppercase; white-space: nowrap; padding: 0.4rem 0.8rem;
+        pointer-events: none; opacity: 0; transition: opacity 0.2s;
+      }
+      .k-hotspot:hover .k-tooltip { opacity: 1; }
+      #k-panel {
+        position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 92vw);
+        background: ${a.panelBg}; border-left: 1px solid ${a.panelBorder};
+        z-index: 8000; transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow-y: auto; display: flex; flex-direction: column;
+      }
+      #k-panel.open { transform: translateX(0); }
+      #k-panel-header {
+        padding: 2rem 2rem 1.5rem; border-bottom: 1px solid ${a.sectionDivider};
+        display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+        position: sticky; top: 0; background: ${a.panelBg}; z-index: 1;
+      }
+      #k-panel-num { font-family: ${a.displayFont}; font-size: 3rem; font-weight: 300; color: ${a.accentColor}; opacity: 0.3; line-height: 1; }
+      #k-panel-title { font-family: ${a.displayFont}; font-size: 1.15rem; font-style: italic; color: ${a.panelText}; line-height: 1.3; flex: 1; padding-top: 0.5rem; }
+      #k-panel-close { background: none; border: none; color: ${a.panelSubtext}; font-size: 1.2rem; cursor: pointer; padding: 0.25rem; line-height: 1; transition: color 0.2s; flex-shrink: 0; }
+      #k-panel-close:hover { color: ${a.accentColor}; }
+      #k-panel-body { padding: 2rem; display: flex; flex-direction: column; gap: 2rem; flex: 1; }
+      .k-panel-section-label {
+        font-family: ${a.labelFont}; font-size: 0.6rem; letter-spacing: 0.25em;
+        text-transform: uppercase; color: ${a.accentColor}; margin-bottom: 0.75rem;
+        display: flex; align-items: center; gap: 0.75rem;
+      }
+      .k-panel-section-label::after { content: ''; flex: 1; height: 1px; background: ${a.sectionDivider}; }
+      .k-panel-text { font-family: ${a.bodyFont}; font-size: 0.82rem; color: ${a.panelSubtext}; line-height: 1.75; }
+      .k-panel-section + .k-panel-section { padding-top: 2rem; border-top: 1px solid ${a.sectionDivider}; }
+      .k-rejected-block { background: rgba(255,255,255,0.02); border-left: 2px solid ${a.sectionDivider}; padding: 0.75rem 1rem; margin-top: 0.5rem; }
+      .k-rejected-text { font-family: ${a.bodyFont}; font-size: 0.78rem; color: ${a.rejectColor}; line-height: 1.7; font-style: italic; }
+      .k-financial-note { background: rgba(184,145,42,0.04); border: 1px solid ${a.sectionDivider}; padding: 0.75rem 1rem; margin-top: 1rem; }
+      .k-financial-note p { font-family: ${a.displayFont}; font-size: 0.9rem; font-style: italic; color: ${a.accentColor}; line-height: 1.5; opacity: 0.8; }
+      #k-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 7999; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
+      #k-overlay.open { opacity: 1; pointer-events: all; }
+      .annotations-hidden .k-hotspot { opacity: 0; pointer-events: none; }
+      #k-panel::-webkit-scrollbar { width: 3px; }
+      #k-panel::-webkit-scrollbar-track { background: transparent; }
+      #k-panel::-webkit-scrollbar-thumb { background: ${a.sectionDivider}; }
+    `;
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  function injectToggle() {
+    const btn = document.createElement('button');
+    btn.id = 'kosmus-toggle';
+    btn.innerHTML = `<span class="toggle-dot"></span><span class="toggle-label">Annotations On</span>`;
+    btn.addEventListener('click', toggleAnnotations);
+    document.body.appendChild(btn);
+
+    const overlay = document.createElement('div');
+    overlay.id = 'k-overlay';
+    overlay.addEventListener('click', closePanel);
+    document.body.appendChild(overlay);
+
+    const panel = document.createElement('div');
+    panel.id = 'k-panel';
+    panel.innerHTML = `<div id="k-panel-header"><div id="k-panel-num">01</div><div id="k-panel-title">Decision title</div><button id="k-panel-close" aria-label="Close">×</button></div><div id="k-panel-body"></div>`;
+    document.body.appendChild(panel);
+    document.getElementById('k-panel-close').addEventListener('click', closePanel);
+  }
+
+  function renderHotspot(annotation, index) {
+    const target = document.querySelector(annotation.hotspotTarget);
+    if (!target) return;
+    if (getComputedStyle(target).position === 'static') target.style.position = 'relative';
+    const spot = document.createElement('div');
+    spot.className = 'k-hotspot';
+    spot.style.top  = annotation.position.top  || 'auto';
+    spot.style.left = annotation.position.left || 'auto';
+    if (annotation.position.right)  { spot.style.left = 'auto'; spot.style.right  = annotation.position.right; }
+    if (annotation.position.bottom) { spot.style.top  = 'auto'; spot.style.bottom = annotation.position.bottom; }
+    spot.innerHTML = `<div class="k-hotspot-inner">${index + 1}</div><div class="k-tooltip">${annotation.decision.substring(0,40)}${annotation.decision.length > 40 ? '…' : ''}</div>`;
+    spot.addEventListener('click', e => { e.stopPropagation(); openPanel(annotation, index + 1); });
+    target.appendChild(spot);
+  }
+
+  function openPanel(annotation, num) {
+    const panel = document.getElementById('k-panel');
+    const overlay = document.getElementById('k-overlay');
+    const body = document.getElementById('k-panel-body');
+    document.getElementById('k-panel-num').textContent = String(num).padStart(2, '0');
+    document.getElementById('k-panel-title').textContent = annotation.decision;
+    body.innerHTML = `
+      <div class="k-panel-section"><div class="k-panel-section-label">The Decision</div><p class="k-panel-text">${annotation.decision}</p></div>
+      <div class="k-panel-section"><div class="k-panel-section-label">The Reasoning</div><p class="k-panel-text">${annotation.reasoning}</p>${annotation.financialNote ? `<div class="k-financial-note"><p>${annotation.financialNote}</p></div>` : ''}</div>
+      <div class="k-panel-section"><div class="k-panel-section-label">The Alternative We Rejected</div><div class="k-rejected-block"><p class="k-rejected-text">${annotation.rejected}</p></div></div>
+    `;
+    panel.classList.add('open');
+    overlay.classList.add('open');
+    activePanel = annotation;
+  }
+
+  function closePanel() {
+    document.getElementById('k-panel').classList.remove('open');
+    document.getElementById('k-overlay').classList.remove('open');
+    activePanel = null;
+  }
+
+  function toggleAnnotations() {
+    annotationsVisible = !annotationsVisible;
+    const btn = document.getElementById('kosmus-toggle');
+    const label = btn.querySelector('.toggle-label');
+    if (annotationsVisible) {
+      document.body.classList.remove('annotations-hidden');
+      label.textContent = 'Annotations On';
+      btn.classList.remove('annotations-off');
+    } else {
+      document.body.classList.add('annotations-hidden');
+      label.textContent = 'View Site Clean';
+      btn.classList.add('annotations-off');
+      closePanel();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ── Cursor + Nav + Reveal + FAQ ── -->
+<script>
+(function() {
+  'use strict';
+
+  // Cursor
+  const dot  = document.getElementById('e-cursor-dot');
+  const ring = document.getElementById('e-cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+  });
+  (function animRing() {
+    rx += (mx - rx) * 0.1; ry += (my - ry) * 0.1;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  })();
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%,-50%) scale(1.8)'; ring.style.opacity = '0.7'; });
+    el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.opacity = '0.4'; });
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('e-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+  // Reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Smooth anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
